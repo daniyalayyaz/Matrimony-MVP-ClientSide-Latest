@@ -66,13 +66,13 @@
               <div class="form-group">
                 <label for="height" class="form-label" style="color: #0f4d5c">Height</label>
                 <div class="input-group">
-                  <input type="number" class="form-control" id="feet" placeholder="Feet" (change)="eventonKey($event)"
-                  [(ngModel)]="height" [value]="height != null ? height : ''" />
+                  <input type="number" class="form-control" id="feet" placeholder="Feet" name="height" (change)="eventonKey($event)"
+                 [value]="height != null ? height : ''" />
                   <div class="input-group-append">
                     <span class="input-group-text">ft</span>
                   </div>
-                  <input type="number" class="form-control" id="inches" placeholder="inches" (change)="eventonKey($event)"
-                  [(ngModel)]="inches" [value]="inches != null ? inches : ''" />
+                  <input type="number" class="form-control" id="inches" placeholder="inches" name="inches" (change)="eventonKey($event)"
+           [value]="inches != null ? inches : ''" />
                   <div class="input-group-append">
                     <span class="input-group-text">in</span>
                   </div>

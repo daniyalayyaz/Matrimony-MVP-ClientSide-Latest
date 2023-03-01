@@ -38,14 +38,14 @@
                                 Logout
 
                             </button> -->
-                            <div *ngIf="packageNname; else obj" style="background-color: #E33365; border-radius: 8px; padding: 10px;">
+                            <div *ngIf="packageNname" style="background-color: #E33365; border-radius: 8px; padding: 10px;">
                                 <h6  style="font-weight: bold; font-family: 'Poppins'; color: white;"><i class="fa-solid fa-crown" style="color:gold
                                 "></i> {{packageNname}}</h6>
                             </div>
 
-                            <ng-template #obj>
+                            <!-- <ng-template #obj>
                                 <h6 class="shadow p-2 rounded bg-danger"style="font-weight: bold; font-family: 'Poppins';">Subscribe Package</h6>
-                            </ng-template>
+                            </ng-template> -->
                         </div>
                         <div class="p-2">
                             <!-- <button type="button" class="btnLive">
@@ -72,8 +72,10 @@
 
                     </div>
                     <ng-template #profile>
+                        <div class="text-center">
                         <img src="https://cdn.techjuice.pk/wp-content/uploads/2015/02/wallpaper-for-facebook-profile-photo-1024x645.jpg"
                         class="profileMarginLeft">
+                    </div>
                     </ng-template>
                     <div class="d-flex justify-content-around iconsOfEdit text-center mt-5">
                         <div (click)="gotoEditProfile()" style="cursor: pointer">

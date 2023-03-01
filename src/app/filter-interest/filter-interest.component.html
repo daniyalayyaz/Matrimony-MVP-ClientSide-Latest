@@ -56,6 +56,20 @@
           </select>
         </div>
         <div class="col-md-2">
+          <label class="form-label mt-3">Height (Feet)</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption"
+            aria-label="Default select example" [(ngModel)]="height">
+            <option class="optStyle" *ngFor="
+                let age of [
+                  3,4,5,6,7,8
+                ]
+              " value="{{ age }}">
+              {{age}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
           <label class="form-label mt-3">Martial Status</label>
           <br />
           <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
@@ -204,7 +218,7 @@
                       {{person.religious}} | {{person.professional}} | {{person.city}}
                     </p>
                     <p class="card-text text-muted">
-                      {{person.sect}} | {{person.montherTonque}} | {{person.country}}
+                      {{person.sect}} | {{person.montherTonque}} | {{person.nationality}}
                     </p>
                     <div class="d-flex">
                       <div class="me-auto">

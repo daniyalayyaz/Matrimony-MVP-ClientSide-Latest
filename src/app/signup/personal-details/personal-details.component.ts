@@ -54,7 +54,7 @@ export class PersonalDetailsComponent implements OnInit {
       name:this.name,
       age:this.userage,
       Religious:this.ReligiousSelect,
-      Sect:this.SectSelect,
+      sect:this.SectSelect,
       MotherTongue:this.MotherTongueSelect,
       MartialStatus:this.MartialStatusSelect,
       Clan:this.Clan,
