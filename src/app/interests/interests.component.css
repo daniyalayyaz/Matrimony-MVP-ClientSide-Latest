@@ -1,0 +1,84 @@
+body {
+    background-color: #FAEDF1;
+}
+
+.bgColor {
+    background: linear-gradient(0deg, rgba(241,88,126,1) 0%, rgba(249,117,112,1) 100%);
+}
+
+.btnEdit {
+    background-color: white !important;
+    border: none;
+    color: #0F4D5C;
+    padding: 10px;
+    width: 120px;
+}
+.cardImage {
+    height: 100%;
+    width: 100%;
+  }
+.loginText{
+    color: #0F4D5C;
+    text-decoration: none;
+}
+.bgEdtCol {
+    background-color: #0F4D5C;
+}
+
+.btnRev {
+    background-color: #ED7E9E;
+    border: none;
+    color: white;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.btnAcp {
+    background-color: #517E89;
+    border: none;
+    color: white;
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.cardImg {
+    width: 50px;
+}
+
+.cardBg {
+    background-color: white;
+}
+
+.btnRed {
+    background-color: #ED5454;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 150px;
+}
+
+.btnGreen {
+    background-color: #34AC62;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 150px;
+}
+@media (max-width: 576px){
+    .col-res{
+        width: 50%;
+    }
+    .btnRev{
+        width: 100%;
+    }
+    .btnAcp{
+        width: 100%;
+    }
+    .resnav{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+}

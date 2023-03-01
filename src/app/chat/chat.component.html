@@ -1,0 +1,105 @@
+<div class="Chat-body">
+
+    <!-- Page header start -->
+    <!-- <div class="page-title">
+        <div class="row gutters">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                <h5 class="title">Chat App</h5>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"> </div>
+        </div>
+    </div> -->
+    <!-- Page header end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper scroll-controller" #scrollMe>
+
+        <!-- Row start -->
+        <div class="row gutters">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="card m-0">
+
+                    <!-- Row start -->
+                    <div class="row no-gutters">
+
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-9">
+                            <div class="selected-user header-position">
+                                <span>To: <span class="name">{{chatList.messages[0].name}}</span></span>
+                            </div>
+                            <div class="chat-container">
+                                <ng-container *ngIf="true">
+                                    <ul class="chat-box chatContainerScroll" *ngFor="let message of chatList.messages">
+                                        <li class="chat-left" *ngIf="message.sender!=CurrentUser._id ">
+                                            <div class="chat-avatar"*ngIf="message.profile;else img">
+                                                    <img src="{{environment.url}}/{{message.profile}}"/>
+                                                <!-- <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+                                                    alt="Retail Admin"> -->
+                                                <div class="chat-name"> {{message.name}}</div>
+                                            </div>
+                                            <ng-template #img>
+                                                <img src="https://i.pinimg.com/originals/bd/70/22/bd702201a2b6d8960734f60f34a22754.jpg" style="margin-right: 20px">
+                                            </ng-template>
+                                            <div class="chat-text" role="button">
+                                                <div *ngIf="message.message.includes(base64); else elseOther" (click)="viewImage(message.message)">
+                                                    <img [src]="message.message"/>
+                                                </div>
+                                                <ng-template #elseOther>
+                                                    {{message.message}}
+                                                </ng-template>
+                                            </div>
+                                            <!-- <div class="chat-hour">08:55 <span class="fa fa-check-circle"></span></div> -->
+                                        </li>
+                                        <li class="chat-right" *ngIf="message.sender==CurrentUser._id ">
+                                            <!-- <div class="chat-hour">08:56 <span class="fa fa-check-circle"></span></div> -->
+                                            <div class="chat-text" role="button">
+                                                <div *ngIf="message.message.includes(base64); else elseCurrent" (click)="viewImage(message.message)">
+                                                    <img [src]="message.message"/>
+                                                </div>
+                                                <ng-template #elseCurrent>
+                                                    {{message.message}}
+                                                </ng-template>
+                                            </div>
+                                            <div class="chat-avatar" *ngIf="message.profile; else img">
+                                                <!-- <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+                                                    alt="Retail Admin"> -->
+                                                    <img src="{{environment.url}}/{{message.profile}}" />
+                                                <p class="chat-name">{{message.name}}</p>
+                                            </div>
+                                            <ng-template #img>
+                                                <img src="https://i.pinimg.com/originals/bd/70/22/bd702201a2b6d8960734f60f34a22754.jpg" style="margin-left: 20px">
+                                            </ng-template>
+                                        </li>
+                                    </ul>
+                                </ng-container>
+                                <div class="form-group mt-3 mb-0 textbox-controller">
+                                    <textarea class="form-control TextBox" [(ngModel)]="chat" rows="2"
+                                        [ngClass]="{'invisible': !showDiv}"
+                                        placeholder="Type your message here..."></textarea>
+                                    <input type="file" #fileInput class="d-none" (change)="selectImage($event)" />
+                                    <div *ngIf="imageUrl" class="d-flex me-4">
+                                        <img [src]='imageUrl' alt="No Image" class="" height="61px" width="100%" />
+                                        <button class="cross-btn" (click)="resetImage()"><i class="fa fa-times"></i></button>
+                                    </div>
+                                    <button class="camera-btn" (click)="clickImage()">
+                                        <i class="fa fa-lg fa-camera"></i>
+                                    </button>
+                                    <button class="Send-Btn" (click)="postChat()">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row end -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Row end -->
+
+    </div>
+    <!-- Content wrapper end -->
+
+</div>

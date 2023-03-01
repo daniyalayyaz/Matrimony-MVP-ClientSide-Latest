@@ -1,0 +1,337 @@
+.badge {
+  position: relative;
+  font-size: .6rem;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+  padding: 0.2em 0.45em;
+}
+.mydisable {
+  pointer-events: none;
+}
+.profileMarginLeft{
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+  /* margin-left: 5rem; */
+}
+.bgMsg {
+  background-color: #6496a2;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+/* .connect{
+  margin-left: 33%;
+} */
+.chatmargin{
+  margin-left: 33%s;
+}
+.chtimgM{
+  margin-left: 1rem;
+}
+.bgDash {
+  background: #faedf1 0% 0% no-repeat padding-box;
+}
+
+.statusIcon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.msgImg {
+  height: 60px;
+  width: 60px;
+  margin-left: 20px;
+  border-radius: 50%;
+}
+
+.onlineShow {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: yellow;
+  border: 2px solid white;
+  bottom: -15px;
+  right: -20px;
+  position: absolute;
+}
+
+.msgText {
+  margin-top: -15px;
+}
+
+.btnLogOut {
+  background: #ff000080 0% 0% no-repeat padding-box;
+  color: white;
+  border: 1px solid #ff0000;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btnLive {
+  background: #81be66ce 0% 0% no-repeat padding-box;
+  color: white;
+  border: 1px solid #99ca83;
+  border-radius: 20px;
+  padding: 5px;
+  width: 90px;
+}
+.body::-webkit-scrollbar{
+  display: none !important;
+}
+.bgProfile::-webkit-scrollbar{
+  display: none;
+}
+.bgProfile {
+  overflow-y: scroll;
+  background-color: white;
+  padding-left: 0;
+  padding-right: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.margin-left {
+  margin-left: 40px;
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  font-size: 200px;
+  background-color: white;
+  color: rgb(228, 227, 227);
+}
+
+.iconsOfEdit {
+  color: #cdcdcd;
+  font-size: small;
+}
+
+.bgColor {
+  background: linear-gradient(0deg, rgba(241, 88, 126, 1) 0%, rgba(249, 117, 112, 1) 100%);
+}
+
+.btnEdit {
+  background-color: white !important;
+  border: none;
+  color: #0F4D5C;
+  padding: 10px;
+  width: 120px;
+}
+
+.sizeOfIcons {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.NotiIcon {
+  /* font-size: 12px;
+  background: linear-gradient(0deg, rgb(236, 11, 11) 0%, rgb(226, 130, 127) 100%);
+  color: white;
+  font-weight: bold;
+  border: none; */
+  margin-top: -1.5rem
+  /* width: 10px; */
+  /* height: 25px; */
+  /* margin-top: -10px; */
+  /* border-radius: 20px; */
+  /* margin-bottom: px; */
+}
+.form-check-input:focus{
+  box-shadow: none; 
+}
+.form-check-input:checked{
+  background-color: #ED7E9E; border-color: #E33365; box-shadow: none; 
+}
+.cardRqt {
+  /* background: transparent linear-gradient(115deg, #ED7E9E 0%, #E33365 100%) 0% 0% no-repeat padding-box; */
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+.iconStyle {
+  font-size: 30px;
+}
+
+.iconTextStyle {
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+
+.onlineBtn {
+  background: transparent linear-gradient(180deg, #fc7e6b 0%, #ef5281 100%) 0% 0% no-repeat padding-box;
+  width: 70px;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.statusCheck {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0cde04;
+  /* border: 2px solid white; */
+  position: absolute;
+  top: 24px;
+  right: 70px;
+}
+
+.cardDetalis {
+  background: #ffff 0% 0% no-repeat padding-box;
+  position: absolute;
+  bottom: 0px;
+  color: black;
+  width: 100%;
+  margin-left: -16px;
+}
+
+.imgflag {
+  width: 40px;
+  height: 25px;
+}
+
+.btnOnline {
+  background: #ED7E9E 0% 0% no-repeat padding-box;
+  width: 226px;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 5px;
+  box-shadow: 0px 3px 6px #00000029;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.cardEdit {
+  cursor: pointer;
+}
+
+.btnNear {
+  width: 226px;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: larger;
+  border-radius: 5px;
+  background: #CCCED4 0% 0% no-repeat padding-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.card-text{
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.insterest {
+  background-color: #0F4D5C;
+  color: white;
+  width: 100%;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+.switch-color{
+  background-color: #ED7E9E;
+}
+
+
+.cardbg {
+  background-color: white;
+}
+
+.imgSize {
+  width: 50px;
+}
+
+.imgCard1 {
+  width: 40px;
+}
+
+.imgCard2 {
+  width: 45px;
+  /* margin-left: 30px; */
+}
+
+.cardImage {
+  width: 100%;
+}
+.aletrimage {
+  width: 33%;
+}
+.styleCard {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+@media (max-width: 576px) {
+  .margin-left {
+    margin-left: 0;
+  }
+
+  .bgProfile {
+    padding: 30px;
+  }
+
+  .cardRqt {
+    width: 40%;
+    margin: 20px;
+  }
+
+  .restabs {
+    width: 33%;
+  }
+
+  .btnNear {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .btnOnline {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .responsivelist {
+    height: 500px;
+    overflow: auto;
+  }
+
+  .resnav {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .responsivelist {
+    padding: 10px;
+  }
+
+  .cardImageRes {
+    width: 40%;
+  }
+
+  .cardbgRes {
+    width: 60%;
+  }
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--bs-modal-color);
+  pointer-events: auto;
+  background-color: var(--bs-modal-bg);
+  background-clip: padding-box;
+  border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+  border-radius: var(--bs-modal-border-radius);
+  outline: 0;
+  margin-top: 30%;
+}

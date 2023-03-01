@@ -1,0 +1,138 @@
+/* ngb-carousel .wrapper {
+    position: relative;
+    height: 0;
+    padding-top: 55%; 
+  }
+  ngb-carousel .wrapper>img {
+    position: absolute;
+  } */
+
+.boxBtn {
+    border: 2px solid white;
+    height: 90px;
+    background: transparent linear-gradient(180deg, #cacaca 0%, #777676 100%) 0% 0% no-repeat padding-box;
+}
+
+.cardBtnBg {
+    background: transparent linear-gradient(180deg, #cacaca 0%, #777676 100%) 0% 0% no-repeat padding-box;
+}
+.bgcolor {
+    background-color: #0F4D5C;
+}
+.headerbackground{
+    background: linear-gradient(0deg, rgba(241, 88, 126, 1) 0%, rgba(249, 117, 112, 1) 100%);
+    color: white;
+
+}
+.modal{
+    background-color: rgba(229, 203, 203, 0.7);;
+ }
+.btnPrivate {
+    color: black;
+    border: none;
+    width: 240px;
+    top: 455px;
+    left: 130px;
+    padding: 8px;
+}
+.profileBgColor{
+    font-family: 'Gill Sans';
+}
+.card-overlay{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.card-overlay1{
+    /* position: absolute; */
+    bottom: 20px;
+    width: 100%;
+}
+.btnRqt {
+    background: #0F4D5C 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    color: white;
+    padding: 8px;
+    width: 242px;
+    border: none;
+    font-size: small;
+    margin-right: 12px;
+}
+
+.bgRow {
+    background: transparent linear-gradient(180deg, #FC7E6B 0%, #EF5281 100%) 0% 0% no-repeat padding-box;
+    border-radius: 5px;
+    color: white;
+    height: 150px;
+}
+
+.profileBgColor {
+    background: rgb(252, 219, 225);  
+}
+
+.underLine {
+    color: #ED7E9E;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.pointOfInformation {
+    list-style: none;
+    color: #ED7E9E;
+}
+
+.infoOfPoint {
+    list-style: none;
+    color: #0F4D5C;
+}
+@media (max-width: 576px){
+    .resImgHide{
+        padding: 10px;
+    }
+    .bgRow{
+        height: 10%;
+    }
+    .resfont{
+        font-size: 24px;
+    }
+    .rescol{
+        margin-left: 0 !important;
+    }
+    .respadding{
+        padding: 10px;
+    }
+    .rescard{
+        width: 50%;
+    }
+    .pointOfInformation{
+        width: 100%;
+    }
+    .overflowcontainer{
+        overflow-x: hidden !important;
+    }
+    .padding-zero{
+        padding-left: 0;
+    }
+    .card-overlay{
+        display: none;
+    }
+    .resImgHide{
+        display: none;
+    }
+    .btnRqt{
+        display: none;
+    }
+    .cardEdit{
+        margin: 0 auto;
+    }
+    .OnMobileAvatar{
+        border-radius: 50% !important;
+        height: 120px;
+        width: 120px;
+        border: 5px solid white;
+        margin-bottom: -50px;
+    }
+    .bgRow{
+        padding-top: 50px !important;
+    }
+}

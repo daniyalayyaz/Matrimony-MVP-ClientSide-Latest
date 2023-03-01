@@ -1,0 +1,126 @@
+<body>
+  <div class="container">
+    <div class="row pt-4 signupcard">
+      <div class="col-md-8 gridEight">
+        <h3 class="ps-5" style="color: #0f4d5c">FAMILY DETAILS</h3>
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Father's Occupation
+            </label>
+            <select class="form-select rounded-pill" aria-label="Default select example" name="FatherOccupation"
+              (change)="eventonKey($event)" [value]="FatherOccupation != null ? FatherOccupation : ''">
+              <option selected>Select Profession</option>
+              <option *ngFor="let Profession of professions" value="{{ Profession }}">
+                {{ Profession }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Mother's Occupation
+            </label>
+            <select class="form-select rounded-pill" aria-label="Default select example" name="MotherOccupation"
+              (change)="eventonKey($event)" [value]="MotherOccupation != null ? MotherOccupation : ''">
+              <option selected>Select Profession</option>
+              <option *ngFor="let Profession of professions" value="{{ Profession }}">
+                {{ Profession }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Siblings Count (Sisters)
+            </label>
+            <select class="form-select rounded-pill" aria-label="Default select example" name="SisterCount"
+              (change)="eventonKey($event)" [value]="SisterCount != null ? SisterCount : ''">
+              <option selected>Select Count</option>
+              <option *ngFor="let count of [0, 1, 2, 3, 4]" value="{{ count }}">
+                {{ count }}
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Siblings Count (Brothers)
+            </label>
+            <select class="form-select rounded-pill" aria-label="Default select example" name="BrotherCount"
+              (change)="eventonKey($event)" [value]="BrotherCount != null ? BrotherCount : ''">
+              <option selected>Select Count</option>
+              <option *ngFor="let count of [0, 1, 2, 3, 4, 5]" value="{{ count }}">
+                {{ count }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Socioeconomic Status</label>
+            <select class="form-select rounded-pill" aria-label="Default select example" name="SocioeconomicStatus"
+              [value]="SocioeconomicStatus != null ? SocioeconomicStatus : ''" (change)="eventonKey($event)">
+              <option selected>Select Status</option>
+              <option value="1">Lower Middle</option>
+              <option value="2">Middle Class</option>
+              <option value="3">Upper Middle</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Any other family info
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: Joint Family" name="OtherFamilyInfo"
+              (keyup)="eventonKey($event)" [value]="OtherFamilyInfo != null ? OtherFamilyInfo : ''" />
+          </div>
+        </div>
+        <div class="row mt-5 ps-5 pe-5">
+          <div class="col-md-6">
+            <button type="button" class="btnNext" (click)="gotoSignupFourthPage()">
+              Previous
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button type="button" class="btnNext" (click)="gotoSignupSeventhPage()">
+              Next Step
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="col-md-4 gridFour d-flex flex-column justify-content-evenly">
+        <span class="stepNxt"> 1 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnOne ms-5 me-5">
+          BASIC DETAILS
+        </button>
+        <span class="stepNxt"> 2 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+          PERSONAL DETAILS
+        </button>
+        <span class="stepNxt"> 3 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnThree ms-5 me-5">
+          MORE PERSONAL DETAILS
+        </button>
+        <span class="stepNxt"> 4 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
+          RESIDENTIAL DETAILS
+        </button>
+        <span class="stepNxt"> 5 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
+          PROFESSIONAL DETAILS
+        </button>
+        <span class="step"> 6 </span>
+        <button style="background-color: #ffffff" type="button" class="btnSix ms-5 me-5">
+          FAMILY DETAILS
+        </button>
+        <span class="stepNxt"> 7 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnSeven ms-5 me-5">
+          CONTACT DETAILS
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

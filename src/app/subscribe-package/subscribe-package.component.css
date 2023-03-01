@@ -1,0 +1,70 @@
+.body{
+    background-color: #FBEDF2;
+}
+
+.upgradeSub {
+    padding: 70px 0;
+    text-align: center;
+}
+
+.tpyePakage {
+    background-color: #ED7E9E;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.free {
+    background-color: #FDCDDB;
+    color: #ce6683;
+    border-radius: 50px;
+    width: 200px;
+}
+
+.btnSub {
+    background-color: #0F4D5C;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 150px;
+    border-radius: 50px;
+    margin-top: -30px;
+}
+.bgColor{
+    background: transparent linear-gradient(180deg, #FC7E6B 0%, #EF5281 100%) 0% 0% no-repeat padding-box;
+box-shadow: 0px 3px 30px #ED7E9E80;
+}
+.checkcolor{
+    color: #56DE1A;
+}
+.btnEdit {
+    background-color: white !important;
+    border: none;
+    color: #0F4D5C;
+    padding: 10px;
+    width: 120px;
+}
+.borderCard {
+    background-color: white;
+    border: 1px solid rgb(204, 201, 201);
+    border-radius: 20px;
+    padding-bottom: 30px;
+}
+
+.ListSytle {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.liSyle {
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .liSyle {
+      padding-left: 120px;
+    }
+  }

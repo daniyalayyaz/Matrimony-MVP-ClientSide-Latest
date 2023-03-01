@@ -1,0 +1,234 @@
+<div style="font-family: 'Poppins';">
+
+  <nav class="navbar navbar-expand-lg bgColor p-4">
+    <div class="container">
+      <a class="navbar-brand text-white fs-4">FIND MATCH</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="nav resnav">
+          <li class="nav-item">
+            <button class="btnEdit" type="button">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              LOG OUT
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div style="background-color: #0F4D5C; color: white" class="">
+    <div class="container">
+      <div class="row" style="padding: 10px;">
+        <div class="col-md-2">
+          <label class="form-label mt-3">Minimum Age</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption"
+            aria-label="Default select example" [(ngModel)]="Min">
+            <option class="optStyle" *ngFor="
+                let age of [
+                  18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+                  32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                  46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+                ]
+              " value="{{ age }}">
+              {{age}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mt-3">Maximum Age</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption"
+            aria-label="Default select example" [(ngModel)]="MAx">
+            <option class="optStyle" *ngFor="
+                let age of [
+                  18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+                  32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                  46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+                ]
+              " value="{{ age }}">
+              {{age}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mt-3">Martial Status</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="martialstatus">
+            <option class="optStyle" *ngFor="let status of martialStatus" value={{status}}>
+              {{status}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mt-3">Religious</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="religious">
+            <option class="optStyle" *ngFor="let religion of religiousSelect" value={{religion.name}}>
+              {{religion.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2" *ngIf="religious=='Islam'">
+          <label class="form-label mt-3">Sect</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="sect">
+            <option class="optStyle" *ngFor="let sect of sectSelect" value={{sect.name}}>
+              {{sect.name}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mt-3">Profession</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="professional">
+            <option class="optStyle" *ngFor="let profession of professions" value={{profession}}>
+              {{profession}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2" *ngIf="professional=='Doctor'">
+          <label class="form-label mt-3">Job Status</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="docJobStatus">
+            <option class="optStyle" *ngFor="
+                let status of [
+                'Specialist',
+                    'PG Trainee',
+                    'General Practitioner',
+                    'MBBS Student',
+                    'PG Exam Candidate',
+                    'House Officer'
+                ]
+              " value="{{ status }}">
+              {{status}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2" *ngIf="professional=='Doctor' && docJobStatus=='Specialist'">
+          <label class="form-label mt-3">Specialty</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="specialty">
+            <option class="optStyle" *ngFor="
+                let status of qualifications
+              " value="{{ status }}">
+              {{status}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2" *ngIf="professional=='Allied Health'">
+          <label class="form-label mt-3">Job Status</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="alliedJobStatus">
+            <option class="optStyle" *ngFor="
+                let status of [
+                  'Physiotherapist',
+                  'Nurse',
+                  'Optemetrist',
+                  'Nutritionist',
+                  'Psycologist',
+                  'Pharmacist',
+                  'Health Technician'
+                ]
+              " value="{{ status }}">
+              {{status}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="form-label mt-3">Country</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="country">
+            <option class="optStyle" *ngFor="let myCountry of countries" value={{myCountry}}>
+              {{myCountry}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-2" *ngIf="country=='Pakistan'">
+          <label class="form-label mt-3">City</label>
+          <br />
+          <select style="background-color: rgba(255, 255, 255, 0.5); width: 100%;" class="selectOption wdOption"
+            aria-label="Default select example" [(ngModel)]="city">
+            <option class="optStyle" *ngFor="let myCity of cities" value={{myCity}}>
+              {{myCity}}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3 mt-2">
+          <label class="form-label lblGender ml-5">Gender:</label>
+          <img (click)="filter('Male');" src={{pathmale}} alt="..." width="80" height="90" />
+          <img (click)="filter('Female');" src={{pathfemale}} alt="..." width="80" height="90" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bgCardColor">
+    <div class="container">
+      <ng-container *ngIf="personList.length > 0">
+        <div class="row">
+          <div class="col-md-4 mt-5" *ngFor="let person of personList">
+            <div class="card mb-3 styleCard">
+              <div class="row g-0 styleCard">
+                <div class="col-md-4">
+                  <img src="https://i.pinimg.com/originals/bd/70/22/bd702201a2b6d8960734f60f34a22754.jpg"
+                    class="rounded-start cardImage" alt="..." />
+                </div>
+                <div class="col-md-8 cardbg">
+                  <div class="card-body">
+                    <div class="d-flex">
+                      <div class="me-auto">
+                        <h5 class="card-title">{{person.name}}</h5>
+                      </div>
+                      <div class="" *ngIf="person.country=='Pakistan'">
+                        <img src="https://bit.ly/3BJ3wIg" class="imgSize" alt="..." />
+                      </div>
+                    </div>
+
+                    <p class="card-text text-muted">
+                      {{person.gender}} | {{person.age}} | {{person.status}}
+                    </p>
+                    <p class="card-text text-muted">
+                      {{person.religious}} | {{person.professional}} | {{person.city}}
+                    </p>
+                    <p class="card-text text-muted">
+                      {{person.sect}} | {{person.montherTonque}} | {{person.country}}
+                    </p>
+                    <div class="d-flex">
+                      <div class="me-auto">
+                        <img src={{pathmessage}} class="imgCard1" (click)="letschat(person._id);" alt="..." />
+                      </div>
+                      <div>
+                        <img src={{pathheart}} class="imgCard2" (click)="AddtoFavClick(person); " alt="..." />
+                      </div>
+                      <div class="ms-auto">
+                        <button type="submit" class="insterest" (click)="onSendInterestClick(person);">
+                          Send Interest
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="personList.length == 0">
+        <h5 style="text-align: center; padding-top: 100px; color: black; font-weight: bold;"> No Users Found</h5>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,295 @@
+<body style="overflow-x: hidden;">
+
+    <div class="main">
+        <nav class="navbar navbar-expand-lg " style="padding-top: 20px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active navitem" aria-current="page" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navitem" href="#">GALLERY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navitem" href="#">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link navitem" href="#">REGISTER</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <div class="herosection">
+            <h1 class="itac">{{data.heading1}}</h1>
+            <p>{{data.paragraph1}}</p>
+            <div>
+                <button class="btn pink" (click)="RedirectToLogin()">LOGIN</button>
+            </div>
+            <div>
+                <button class="btn blue" (click)="RedirectToSignup()">REGISTER</button>
+            </div>
+        </div>
+    </div>
+    <div>
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[0].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[1].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[2].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[3].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[4].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[5].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[6].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+        <div class="col-md-3">
+            <div class="ypube1"><i class="fa-solid fa-circle fas fa-1x"></i>Online</div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.images.data[7].attributes.url}}"
+                alt="" class="fit-image">
+        </div>
+
+    </div>
+</div>
+    <div class="last">
+        <h2>{{data.heading2}}</h2>
+        <h2>{{data.heading3}}</h2>
+        <p>{{data.paragraph2}}</p>
+    </div>
+    <div class="images row accordion its">
+        <!-- src="http://localhost:1337{{obj.data.data[0].attributes.images.data[7].attributes.url}}" -->
+        <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="ypube"><i class="fa-brands fa-youtube fa fa-5px"></i></div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.second4div.data[0].attributes.url}}"
+              width="275px"height="185px"  alt="">
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="ypube"><i class="fa-brands fa-youtube fa fa-5px"></i></div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.second4div.data[1].attributes.url}}"
+              width="275px"height="185px"  alt="">
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="ypube"><i class="fa-brands fa-youtube fa fa-5px"></i></div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.second4div.data[2].attributes.url}}"
+              width="275px"height="185px"  alt="">
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6">
+            <div class="ypube"><i class="fa-brands fa-youtube fa fa-5px"></i></div>
+            <img src="http://localhost:1337{{obj.data.data[0].attributes.second4div.data[3].attributes.url}}"
+              width="275px"height="185px"  alt="">
+        </div>
+    </div>
+
+    <div class="mb-9">
+        <h2 class="btns" style="padding-top: 20px;">{{data.heading4}}</h2>
+        <div class=" border1"></div>
+    </div>
+    <div class="row flex1 accordion its">
+
+        <div class="card border-secondary mb-3 " style="max-width: 18rem;">
+            <i class="fa-solid fa-quote-left fas"></i>
+            <div class="card-body ">
+
+                <p class="card-text">{{data.dev3description}} <i class="fa-solid fa-quote-right fas"></i></p>
+                <div class="grid-container">
+                    <div>
+                        <img class="img1"
+                        src="http://localhost:1337{{obj.data.data[0].attributes.div3image.data[0].attributes.url}}"
+                            alt="">
+                    </div>
+                    <div>
+
+                        <p style="font-weight: bold;">{{data.dev3heading}}</p>
+                        <p>{{data.dev3paragraph}}</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="card border-secondary mb-3 " style="max-width: 18rem;">
+            <i class="fa-solid fa-quote-left fas"></i>
+            <div class="card-body ">
+
+                <p class="card-text">{{data.dev3description1}} <i class="fa-solid fa-quote-right fas"></i></p>
+                <div class="grid-container">
+                    <div>
+                        <img class="img1"
+                        src="http://localhost:1337{{obj.data.data[0].attributes.div3image.data[1].attributes.url}}"
+                            alt="">
+                    </div>
+                    <div>
+
+                        <p style="font-weight: bold;">{{data.dev3heading1}}</p>
+                        <p>{{data.dev3paragraph1}}</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="card border-secondary mb-3 " style="max-width: 18rem;">
+            <i class="fa-solid fa-quote-left fas"></i>
+            <div class="card-body ">
+
+                <p class="card-text">{{data.dev3description2}} <i class="fa-solid fa-quote-right fas"></i></p>
+                <div class="grid-container">
+                    <div>
+                        <img class="img1"
+                        src="http://localhost:1337{{obj.data.data[0].attributes.div3image.data[2].attributes.url}}"
+                            alt="">
+                    </div>
+                    <div>
+
+                        <p style="font-weight: bold;">{{data.dev3heading2}}</p>
+                        <p>{{data.dev3paragrap2}}</p>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2 class="btns">FAQ'S</h2>
+            <div class=" border1"></div>
+        </div>
+        <div class="accordion accordion-r" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        {{questionAnswer.question1}}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {{questionAnswer.answer1}}
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        {{questionAnswer.question2}}
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {{questionAnswer.answer2}}
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        {{questionAnswer.question3}}
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {{questionAnswer.answer3}}
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingfour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                        {{questionAnswer.question4}}
+                    </button>
+                </h2>
+                <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        {{questionAnswer.answer4}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="last">
+        <h2 class="itac">{{data.logo}}</h2>
+        <div class="flex1">
+
+            <div>
+                <li>
+                    <a class="nav-link active" aria-current="page" href="#">{{data.home}}</a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{data.gallery}}</a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{data.login}}</a>
+                </li>
+            </div>
+            <div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{data.register}}</a>
+                </li>
+            </div>
+            <div>
+                <!-- <li class="nav-item">
+              <a class="nav-link" href="#">PRIVACY POLICY</a>
+            </li> -->
+
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        2023 Matrimony M.V.P. All rights reserved.
+    </div>
+
+</body>

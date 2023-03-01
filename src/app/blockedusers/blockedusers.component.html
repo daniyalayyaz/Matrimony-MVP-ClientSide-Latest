@@ -1,0 +1,86 @@
+<div style="font-family: 'Poppins';" class="body">
+<nav class="navbar navbar-expand-lg bgColor p-4">
+    <div class="container">
+        <a class="navbar-brand text-white fs-4">BLOCKED USERS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="nav resnav">
+                <li class="nav-item" (click)="gotoInterests()" style="cursor: pointer;">
+                    <div class="fs-4 me-5 text-white">
+                        <i class="fa-solid fa-user text-white me-2"></i>
+                        Interests
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="btnEdit" type="button">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        LOG OUT
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="bgDash">
+    <div class="row responsivelist">
+        <ng-container *ngIf="1 > 0">
+            <div class="col-md-4 mt-3" *ngFor="let person of personList ;let i = index" >
+                <div class="card mb-3 styleCard" style="width: 100%; cursor: pointer;">
+                    <div class="row g-0 styleCard">
+                        <div class="col-md-4 cardImageRes">
+                            <img src="https://bit.ly/3RzZK9J" class="rounded-start cardImage" alt="..." />
+                        </div>
+                        <div class="col-md-8 cardbg cardbgRes">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div class="me-auto">
+                                        <h5 class="card-title">{{person.name}}</h5>
+                                    </div>
+                                    <div class="">
+                                        <img src="https://bit.ly/3BJ3wIg" class="imgSize"
+                                            alt="..." />
+                                    </div>
+                                </div>
+
+                                <p class="card-text text-muted">
+                                    {{person.gender}} | {{person.age}} | {{person.profession}}
+                                </p>
+                                <p class="card-text text-muted">
+                                    {{person.city}} | {{person.country}}
+                                </p>
+                                <p class="card-text text-muted">
+                                    {{person.caste}} | {{person.religious}} | {{person.montherTonque}}
+                                </p>
+                                <div class="d-flex mt-2">
+                                    <div class="ms-auto">
+                                        <button type="submit" class="insterest">
+                                            View
+                                        </button>
+                                    </div>
+                                    <div class="ms-auto">
+                                        <button type="submit" class="insterest">
+                                            Report
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="ms-auto">
+                                        <button type="submit" (click)="unblock(person)" class="insterest">
+                                            Unblock
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="0 != 0">
+                <h5 class="NoDataMessage">No Blocked Users Found</h5>
+        </ng-container>
+    </div>
+    </div>
+</div>

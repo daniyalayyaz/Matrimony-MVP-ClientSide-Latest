@@ -1,0 +1,294 @@
+<body>
+  <div class="container">
+    <div class="row pt-4 signupcard">
+      <div class="col-md-12 gridEight">
+        <form (submit)="gotoSignupThirdPage()">
+          <h3 class="" style="color: #0f4d5c; margin-bottom: 20px;">Choose Your Partner Preferences</h3>
+          <div class="row">
+            <div class="col-md-3">
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Age
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="age"
+                [value]="userage != undefined ? userage : ''" (change)="eventonKey($event)" required="true">
+                <option selected value="">Select Age</option>
+                <option *ngFor="
+                    let age of [
+                      18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+                      32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                      46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+                    ]
+                  " value="{{ age }}">
+                  {{ age }}
+                </option>
+              </select> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Martial Status
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="martialStatus"
+                [value]="MartialStatusSelect != null ? MartialStatusSelect : ''" (change)="eventonKey($event)"
+                required="true">
+                <option selected value="">Select Status</option>
+                <option *ngFor="let status of MartialStatus" value="{{ status.value }}">
+                  {{ status.label }}
+                </option>
+              </select> -->
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Religious
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="religious"
+                 [value]="ReligiousSelect != null ? ReligiousSelect : ''"
+                (change)="eventonKey($event)" required="true">
+                <option selected>Select Religious</option>
+                <option *ngFor="let rel of Religious" value="{{ rel.name }}">
+                  {{ rel.name }}
+                </option>
+              </select>
+              <label for="formGroupExampleInput" class="form-label mt-2" style="color: #0f4d5c">
+                Caste
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="caste"
+                [value]="CasteSelect != null ? CasteSelect : ''" (change)="eventonKey($event)">
+                <option selected>Select Caste</option>
+                <option *ngFor="let caste of castes" value="{{ caste.name }}">
+                  {{ caste.name }}
+                </option>
+              </select>
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Any Other Nationality
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="otherNationalities"
+                (change)="eventonKey($event)" [value]="AnyOtherNationality != null ? AnyOtherNationality : ''">
+                <option selected>Select Country</option>
+                <option *ngFor="let country of countries" value="{{ country.name}}">
+                  {{ country.name }}
+                </option>
+              </select> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Profession
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="profession"
+                (change)="eventonKey($event)" [(ngModel)]="ProfessionSelect"
+                [value]="ProfessionSelect != null ? ProfessionSelect : ''">
+                <option selected>Select Profession</option>
+                <option *ngFor="let Profession of ['Doctor', 'Allied Health', 'Other']" value="{{ Profession }}">
+                  {{ Profession }}
+                </option>
+              </select> -->
+
+            </div>
+
+            <div class="col-md-3">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Complexion
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="complexion"
+                [value]="ComplexionSelect != null ? ComplexionSelect : ''" (change)="eventonKey($event)"
+                required="true">
+                <option selected value="">Select Complexion</option>
+                <option *ngFor="let complexion of Complexion" value="{{ complexion.name }}">
+                  {{ complexion.name }}
+                </option>
+              </select>
+              <label for="formGroupExampleInput" class="form-label mt-2" style="color: #0f4d5c">
+                Build
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="build"
+                [value]="buildSelect != null ?  buildSelect : ''" (change)="eventonKey($event)" required="true">
+                <option selected value="">Select Build</option>
+                <option *ngFor="let build of Build" value="{{ build.name }}">
+                  {{ build.name }}
+                </option>
+              </select>
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Other Religion
+              </label>
+              <input type="text" class="form-control rounded-pill" aria-label="Age" aria-describedby="addon-wrapping"
+                placeholder="ex: Buddhists" name="OtherReligion" [value]="OtherReligion != null ? OtherReligion : ''"
+                (keyup)="eventonKey($event)" /> -->
+
+                <!-- <div class="form-group">
+                  <label for="height" class="form-label" style="color: #0f4d5c">Height</label>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="feet" placeholder="Feet" (change)="eventonKey($event)"
+                      [(ngModel)]="height" [value]="height != null ? height : ''" />
+                    <div class="input-group-append">
+                      <span class="input-group-text">ft</span>
+                    </div>
+                    <input type="number" class="form-control" id="inches" placeholder="Inches">
+                    <div class="input-group-append">
+                      <span class="input-group-text">in</span>
+                    </div>
+                  </div>
+                </div> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Religious Status
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="religiousStatus"
+                (change)="eventonKey($event)" [value]="
+                  ReligiousStatusSelect != null ? ReligiousStatusSelect : ''
+                " required="true">
+                <option selected value="">Select Status</option>
+                <option *ngFor="let status of ReligiosStatus" value="{{ status.value }}">
+                  {{ status.label }}
+                </option>
+              </select> -->
+     
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Clan
+              </label>
+              <input type="text" class="form-control rounded-pill" aria-label="Age" aria-describedby="addon-wrapping"
+                placeholder="ex: Arain" name="clan" [value]="Clan != null ? Clan : ''" (keyup)="eventonKey($event)" /> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Monthly Income
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="monthlyIncome"
+                (change)="eventonKey($event)" [value]="Income != null ? Income : ''">
+                <option selected>Select Income</option>
+                <option *ngFor="
+                          let income of ['50k','100k','150k','200k','300k','400k','500k']" value="{{ income }}">
+                  Upto {{ income }}
+                </option>
+              </select> -->
+
+
+            </div>
+            <div class="col-md-3">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Mother Tongue
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="montherTonque"
+                [value]="MotherTongueSelect != null ? MotherTongueSelect : ''" (change)="eventonKey($event)"
+                required="true">
+                <option selected value="">Select Mother Tongue</option>
+                <option *ngFor="let tongue of MotherTongue" value="{{ tongue.name }}">
+                  {{ tongue.name }}
+                </option>
+              </select>
+              <label for="formGroupExampleInput" class="form-label mt-2" style="color: #0f4d5c">
+                Looks
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="looks"
+                [value]="LooksSelect != null ? LooksSelect : ''" (change)="eventonKey($event)" required="true">
+                <option selected value="">Select Looks</option>
+                <option *ngFor="let look of Looks" value="{{ look.name }}">
+                  {{ look.name }}
+                </option>
+              </select>
+         
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                House
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="house"
+                (change)="eventonKey($event)" [value]="HouseStatus != null ? HouseStatus : ''">
+                <option selected>Select Status</option>
+                <option value="Owned">Owned</option>
+                <option value="Rental">Rental</option>
+              </select> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Siblings Count (Brothers)
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="BrotherCount"
+                (change)="eventonKey($event)" [value]="BrotherCount != null ? BrotherCount : ''">
+                <option selected>Select Count</option>
+                <option *ngFor="let count of [0, 1, 2, 3, 4, 5]" value="{{ count }}">
+                  {{ count }}
+                </option>
+              </select> -->
+            </div>
+            <div class="col-md-3">
+
+
+              <!-- <datalist id="tickmarks">
+                <option value="91.44" label="3ft"></option>
+                <option value="121.92" label="4ft"></option>
+                <option value="152.4" label="5ft"></option>
+                <option value="182.88" label="6ft"></option>
+                <option value="213.36" label="7ft"></option>
+              </datalist> -->
+
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Country
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="country"
+                (change)="eventonKey($event)"
+                [value]="CountrySelect != null ? CountrySelect : ''">
+                <option selected>Select Country</option>
+                <option *ngFor="let Country of countries" value="{{ Country.name }}">
+                  {{ Country.name }}
+                </option>
+              </select>
+              <!-- <div *ngIf="CountrySelect == 'Pakistan'">
+                <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                  Province
+                </label>
+                <select class="form-select rounded-pill" aria-label="Default select example" name="Province"
+                  [value]="Province != null ? Province : ''" (change)="eventonKey($event)">
+                  <option selected>Select Province</option>
+                  <option *ngFor="
+                        let Province of [
+                          'Punjab',
+                          'Sindh',
+                          'Balochistan',
+                          'Khyber Pukhtunkhwah',
+                          'Gilgit Baltistan'
+                        ]
+                      " value="{{ Province }}">
+                    {{ Province }}
+                  </option>
+                </select>
+
+              </div> -->
+              <!-- <div *ngIf="CountrySelect == 'Pakistan'">
+                <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                  City
+                </label>
+                <select class="form-select rounded-pill" aria-label="Default select example" name="City"
+                  (change)="eventonKey($event)" [value]="City != null ? City : ''">
+                  <option selected>Select City</option>
+                  <option *ngFor="let city of cities" value="{{ city}}">
+                    {{ city }}
+                  </option>
+                </select>
+              </div> -->
+
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                  Province
+                </label>
+                <select class="form-select rounded-pill" aria-label="Default select example" name="Province"
+                  (change)="eventonKey($event)" [value]="Province != null ? Province : ''">
+                  <option selected>Select Province</option>
+                  <option *ngFor="
+                        let Province of [
+                          'Punjab','Sindh','Balochistan','Khyber Pukhtunkhwah','Gilgit Baltistan']" value="{{ Province }}">{{ Province }}
+                  </option>
+                </select> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Socioeconomic Status</label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="socioeconomicStatus"
+                [value]="SocioeconomicStatus != null ? SocioeconomicStatus : ''" (change)="eventonKey($event)">
+                <option selected>Select Status</option>
+                <option value="1">Lower Middle</option>
+                <option value="2">Middle Class</option>
+                <option value="3">Upper Middle</option>
+              </select> -->
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Siblings Count (Sisters)
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="SisterCount"
+                (change)="eventonKey($event)" [value]="SisterCount != null ? SisterCount : ''">
+                <option selected>Select Count</option>
+                <option *ngFor="let count of [0, 1, 2, 3, 4]" value="{{ count }}">
+                  {{ count }}
+                </option>
+              </select> -->
+            </div>
+            <div class="col-md-12 text-center mt-5">
+              <button type="submit" class="btnNext ">Save Preferences</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>

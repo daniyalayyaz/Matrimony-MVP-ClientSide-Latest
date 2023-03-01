@@ -1,0 +1,109 @@
+<div style="font-family: 'Poppins';">
+    <nav class="navbar navbar-expand-lg bgColor p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">INTEREST REQUESTS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item">
+                        <div class="fs-4 me-5 text-white">
+                            <i class="fa-solid fa-user text-white me-2"></i>
+                            Interests
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button" (click)="logOut()">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid text-center bgEdtCol p-4">
+        <div class="row">
+            <div class="col-md-6 text-end col-res">
+                <button class="btnRev" type="button" (click)="ViewAllRequests()">
+                    Received Requests
+                </button>
+            </div>
+            <div class="col-md-6 text-start col-res">
+                <button class="btnAcp" type="button" (click)="ViewAcceptedRequests()">
+                    Accepted Request
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center mt-4">
+        <div class="row">
+            <ng-container *ngIf="requestedPersonsList.length > 0">
+                <div class="col-md-6" *ngFor="let user of requestedPersonsList">
+                    <div class="card mb-3 cardBg">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{environment.url}}\{{user.image}}"
+                                class="rounded-start cardImage" alt="" />
+                                <!-- <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                    class="img-fluid rounded-start" alt="..." /> -->
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="me-auto">
+                                            <h5 class="card-title text-start">
+                                                {{user.name}}
+                                            </h5>
+                                        </div>
+                                        <div>
+                                            Country
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="me-auto">
+                                            <p class="card-text text-start mlSize">
+                                                {{user.professional}}
+                                            </p>
+                                        </div>
+                                        <p class="text-end pkrRight">Pakistan</p>
+                                    </div>
+                                    <p class="card-text text-start">{{user.distance}}</p>
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <div class="d-flex"*ngIf="!ViewAcceptedRequest">
+                                            <div class="me-auto">
+                                                <button class="btnRed me-3 cardSize" type="button"
+                                                    (click)="CancelRequest(user)">
+                                                    IGNORE
+                                                </button>
+                                            </div>
+                                            <div>
+                                                <button class="btnGreen cardSize" type="button"
+                                                    (click)="AcceptRequest(user)">
+                                                    ACCEPT
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </ng-container>
+            <ng-container *ngIf="requestedPersonsList.length == 0">
+                <div>
+                    <h5>
+                        No Request Found
+                    </h5>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "matrimony-e3819": {
+      "hosting": {
+        "matrimony-mvp-angular": [
+          "matrimony-e3819"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "matrimony-e3819"
+  }
+}

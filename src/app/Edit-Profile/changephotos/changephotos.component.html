@@ -1,0 +1,89 @@
+<div style="font-family: 'Poppins';">
+    <!--  NAVBAR-->
+    <nav class="navbar navbar-expand-lg bgColor p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item" (click)="gotoInterests()" style="cursor: pointer;">
+                        <div class="fs-4 me-5 text-white">
+                            <i class="fa-solid fa-user text-white me-2"></i>
+                            Interests
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button">
+                            <i class="fa-solid fa-arrow-right-from-bracket" (click)="logOut()"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- SIDE NAVBAR -->
+    <!-- <div class="sidenav">
+        <img *ngIf="imageUrl;else profileimag" src="{{environment.url}}/{{imageUrl}}" alt="You have No Profile"
+            height="250px" width="250px">
+        <a (click)="gotoEditProfile()" style="cursor: pointer;"> Edit My Profile</a>
+        <a (click)="gotoEditPhotos()" style="cursor: pointer;"> Edit My Photos</a>
+       
+    </div>
+    <ng-template #profileimag>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbU1g5sdIpmGSYmMed1IwWkzHy1zeXeAOymJWKphA6ons9qKw2BkaV9eiO9JpBA4T_ZU&usqp=CAU"
+            height="250px" width="250px" alt="">
+    </ng-template> -->
+    <div class="about">
+        <div class="main-card">
+            <h1>Edit my Photos</h1>
+            <hr />
+            <div>
+                <div class="col d-flex" *ngIf="imageUrl;else imgUrl">
+                    <img src="{{environment.url}}/{{imageUrl}}" alt="You have No Profile" height="100px"
+                        width="100px">
+                        <div>
+                            <button class="cross-btn" (click)="deleteProfile()"><i class="fa fa-times"></i></button>
+                        </div>
+                </div>
+                <label class="btn btn-default">
+                    <input type="file" id="img" (change)="selectImage($event)" />
+                </label>
+                <button class="btn UploadBtn" type="submit" (click)="onSubmit()">Upload</button>
+            </div>
+            <ng-template #imgUrl>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbU1g5sdIpmGSYmMed1IwWkzHy1zeXeAOymJWKphA6ons9qKw2BkaV9eiO9JpBA4T_ZU&usqp=CAU"
+                    alt="">
+            </ng-template>
+            <hr>
+            <br />
+            <div class="row">
+                <h2 class="col-md-4">Gallary Photos</h2>
+                <!-- <div class="col"  >
+                    <img *ngFor='let url of gallary' [src]='url' alt="You have No Profile" height="100px" width="100px">
+                    <img *ngFor='let url of multipleImages' [src]='url' alt="You have No Profile" height="100px" width="100px">
+                </div> -->
+                <div class="col d-flex">
+                    <div *ngFor='let url of gallary.image' class="d-flex">
+                        <img src='{{environment.url}}/{{url.path}}' alt="You have No Profile" height="100px" width="100px">
+                        <div>
+                            <button class="cross-btn" (click)="deleteImage(url.path)"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                    <img *ngFor='let url of multipleImages' [src]='url' alt="You have No Profile" height="100px"
+                        width="100px">
+                </div>
+                <label class="btn btn-default">
+                    <input type="file" id="img" name="images" multiple (change)="selectMultipleImage($event)" />
+                </label>
+                <button class="btn UploadBtn" type="submit" (click)="onMultipleSubmit()">Upload</button>
+            </div>
+            <br />
+            <hr>
+            <br />
+        </div>
+    </div>
+</div>

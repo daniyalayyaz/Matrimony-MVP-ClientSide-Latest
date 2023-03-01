@@ -1,0 +1,257 @@
+<div class="profileBgColor">
+    <nav class="navbar navbar-expand-lg navbar-dark bgcolor p-3">
+        <div class="container">
+            <a class="navbar-brand">
+                Logo
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-md-auto gap-2">
+                    <li class="nav-item rounded">
+                        <a class="nav-link" aria-current="page">
+                            <i class="bi bi-house-fill me-2"></i>HOME
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a class="nav-link active">
+                            <i class="bi bi-people-fill me-2"></i>GALLERY
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a class="nav-link">
+                            LOGIN
+                        </a>
+                    </li>
+                    <li class="nav-item rounded">
+                        <a class="nav-link">
+                            REGISTER
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="overflowcontainer text-center mt-5">
+        <div class="row" style="margin-left: 20px; margin-right: 20px">
+            <div class="col-md-3 padding-zero">
+                <div style="
+              border: 1px solid #ffff;
+        " class="card text-bg-dark cardEdit OnMobileAvatar card-overlay1">
+
+                    <!-- <p *ngIf="profilepic"> <img [src]="imageUrl" class="OnMobileAvatar" /></p>
+                    <p *ngIf="!profilepic"><img [src]="imageUrl"class="OnMobileAvatar" /></p> -->
+                    <div class="" *ngIf="imageUrl;else img">
+                        <p class="card-text cardDetalis text-dark cardBtnBg">
+                            <img [src]='imageUrl'  width="302px" height="150px" />
+                            <!-- <img src={{pathmessage}} (click)="OnMessageClick()" alt="Girl in a jacket" width="50" -->
+                                <!-- height="60" /> -->
+                            <!-- <img src={{pathheart}} (click)="OnFavClick()" alt="Girl in a jacket" width="50" -->
+                                <!-- height="50" /> -->
+                            <!-- <img src={{pathright}} alt="Girl in a jacket" width="50" height="60" /> -->
+                        </p>
+                    </div>
+                    <ng-template #img>
+                       <img  src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg"
+                       width="302px" height="150px">
+                    </ng-template>
+                </div>
+
+                <!-- <div class="row mt-2 resImgHide">
+                    <div class="col-4 ">
+                        <img *ngFor='let url of gallary' [src]='url' alt="You have No Profile" height="100px" width="100px">
+                    </div>
+                </div> -->
+                <ngb-carousel *ngIf="gallary; else galleryImg">
+                    <ng-template ngbSlide *ngFor="let image of gallary;">
+                      <div class="wrapper">
+                        <img [src]='image.image' alt="Random first slide" width="302px" height="150px">
+                      </div>
+                    </ng-template>
+                  </ngb-carousel>
+                  <ng-template #galleryImg>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQPp2A-sJfaIat177Mus3XzVsNqsNiu7ysw&usqp=CAU">
+                  </ng-template>
+                <button type="button" class="btnRqt mb-3 mt-3" (click)="gotoSubscribe()">
+                    INTEREST REQUEST
+                </button>
+                <button type="button" class="btnRqt mb-3" (click)="blockuser(profileDetails._id)">
+                    BLOCK
+                </button>
+                <button type="button" class="btnRqt" (click)="openModal()">
+                    REPORT PROFILE
+                </button>
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header headerbackground">
+                            <h4 class="modal-title">Report User</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control rounded-pill" aria-label="Name" name="name"
+                                aria-describedby="addon-wrapping" placeholder="Enter Reason" required="true" 
+                                [(ngModel)]="reportMessage"/> <br>
+                            <button type="button" class="btnRqt mb-3"(click)="reportUser()" >
+                                SUBMIT
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" (click)="onCloseHandled()">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 padding-zero">
+                <div class="bgRow pt-4">
+                    <div class="row ms-3 me-3">
+                        <div class="col-6">
+                            <h1 class="text-start resfont">{{profileDetails.name}}</h1>
+                        </div>
+                        <div class="col-6">
+                            <p class="text-end">{{profileDetails.country}}</p>
+                        </div>
+                    </div>
+                    <div class="row ms-3 me-3">
+                        <div class="col-6">
+                            <h3 class="text-start">{{profileDetails.professional}}</h3>
+                        </div>
+                        <div class="col-6 text-end">
+
+                            <img class="text-end" src="https://bit.ly/3BbFu7p" alt="pakistan" width="80" height="40" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="text-start bg-white mt-2 p-3" *ngFor="let info of profileInfo">
+                    <p style="color: #ED7E9E">{{info.title}}</p>
+                    <hr class="underLine" />
+                    <p>{{info.information}}</p>
+                </div> -->
+                <div class="row mt-3 ms-3 me-3 text-start">
+                    <div class="col-md-12 bg-white rescol">
+                        <p style="color: #ED7E9E" class="ps-4 mt-4">Basic Information</p>
+                        <hr class="underLine" />
+                        <div class="row">
+                            <div class="col-md-6 rescard">
+                                <ul class="pointOfInformation">
+                                    <li class="pt-3">Email</li>
+                                    <li class="pt-3">Personal Contact</li>
+                                    <li class="pt-3">Parent Contact</li>
+                                    <li class="pt-3">Gender</li>
+                                    <li class="pt-3">Age</li>
+                                    <li class="pt-3">Status</li>
+                                    <li class="pt-3">Religion</li>
+                                    <li class="pt-3">Other Qualification</li>
+                                    <li class="pt-3">Job Status</li>
+                                    <li class="pt-3">Work Place</li>
+                                    <li class="pt-3">Nationality</li>
+                                    <li class="pt-3">Future Plans</li>
+                                    <li class="pt-3">Profession</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 rescard">
+                                <ul class="infoOfPoint">
+                                    <li class="pt-3">{{profileDetails.email}}</li>
+                                    <p *ngIf="checknum">
+                                        <li class="pt-3">{{profileDetails.personalContact}}</li>
+                                    </p>
+                                    <p *ngIf="!checknum">
+                                        <li class="pt-3">************</li>
+                                    </p>
+
+                                    <p *ngIf="checknum">
+                                        <li class="pt-3">{{profileDetails.parentContact}}</li>
+                                    </p>
+                                    <p *ngIf="!checknum">
+                                        <li class="pt-3">************</li>
+                                    </p>
+                                    <li class="pt-3">{{profileDetails.gender}}</li>
+                                    <li class="pt-3">{{profileDetails.age}}</li>
+                                    <li class="pt-3">{{profileDetails.status}}</li>
+                                    <li class="pt-3">{{profileDetails.religious}}</li>
+                                    <li class="pt-3">{{profileDetails.anotherqualification}}</li>
+                                    <li class="pt-3">{{profileDetails.jobStatus}}</li>
+                                    <li class="pt-3">{{profileDetails.workplace}}</li>
+                                    <li class="pt-3">{{profileDetails.nationality}}</li>
+                                    <li class="pt-3">{{profileDetails.futurePlans}}</li>
+                                    <li class="pt-3">{{profileDetails.professional}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row mt-3 ms-3 me-3 mb-5 text-start">
+                    <div class="col-md-12 bg-white rescol">
+                        <p style="color: #ED7E9E" class="ps-4 mt-4">Personal Information</p>
+                        <hr class="underLine" />
+                        <div class="row">
+                            <div class="col-md-6 rescard">
+                                <ul class="pointOfInformation">
+                                    <li class="pt-3">My Sect</li>
+                                    <li class="pt-3">Caste</li>
+                                    <li class="pt-3">Religious Status</li>
+                                    <li class="pt-3">Clan</li>
+                                    <li class="pt-3">Mother Tongue</li>
+                                    <li class="pt-3">Looks</li>
+                                    <li class="pt-3">Complexion</li>
+                                    <li class="pt-3">Height</li>
+                                    <li class="pt-3">Build</li>
+                                    <li class="pt-3">Hobbies</li>
+                                    <li class="pt-3">Country</li>
+                                    <li class="pt-3">Province</li>
+                                    <li class="pt-3">City</li>
+                                    <li class="pt-3">House</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 rescard">
+                                <ul class="infoOfPoint">
+                                    <li class="pt-3">{{profileDetails.sect}}</li>
+                                    <li class="pt-3">{{profileDetails.caste}}</li>
+                                    <li class="pt-3">{{profileDetails.religiousStatus}}</li>
+                                    <li class="pt-3">{{profileDetails.clan}}</li>
+                                    <li class="pt-3">{{profileDetails.montherTonque}}</li>
+                                    <li class="pt-3">{{profileDetails.looks}}</li>
+                                    <li class="pt-3">{{profileDetails.complexion}}</li>
+                                    <li class="pt-3">{{profileDetails.height}}</li>
+                                    <li class="pt-3">{{profileDetails.build}}</li>
+                                    <li class="pt-3">{{profileDetails.hobbies}}</li>
+                                    <li class="pt-3">{{profileDetails.country}}</li>
+                                    <li class="pt-3">{{profileDetails.province}}</li>
+                                    <li class="pt-3">{{profileDetails.city}}</li>
+                                    <li class="pt-3">{{profileDetails.house}}</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+.bgcolor {
+    background-color: #0F4D5C;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    /* background-color: #FFD5E1; */
+}
+.bgColor {
+    background: linear-gradient(0deg, rgba(241,88,126,1) 0%, rgba(249,117,112,1) 100%);
+}
+.btnEdit {
+    background-color: white !important;
+    border: none;
+    color: #0F4D5C;
+    padding: 10px;
+    width: 120px;
+}
+.bgCardColor {
+    height: 85vh;
+    background-color: #FFCBDA;
+}
+
+.subNav {
+    background-color: #EE6E94;  
+    padding: 30px;
+    color: white;
+}
+
+.selectOption {
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 133px;
+    padding: 10px;
+    background-color: #EC8DA9;
+    color: white;
+}
+
+.wdOption {
+    width: 170px;
+}
+
+.reset {
+    background-color: #0F4D5C;
+    color: white;
+    padding: 5px;
+    width: 130px;
+    border: none;
+    margin-top: 35px;
+    margin-left: 50px;
+}
+
+.insterest {
+    background-color: #0F4D5C;
+    color: white;
+    width: 150px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.cardbg {
+    background-color: white;
+}
+
+.imgSize {
+    width: 50px;
+}
+
+.imgCard1 {
+    width: 40px;
+}
+
+.imgCard2 {
+    width: 45px;
+    /* margin-left: 30px; */
+}
+
+.cardImage {
+    height: 225px;
+    width: 100%;
+}
+
+.styleCard {
+    /* border: 2px solid red; */
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .styleCard {
+           /* border: 2px solid red; */
+           width: 100%;
+    }
+    .bgCardColor{
+        height: 90vh;
+    }
+  }
+
+.optStyle {
+    background-color: #0F4D5C;
+}

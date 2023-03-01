@@ -1,0 +1,65 @@
+.bgColor {
+    background: linear-gradient(0deg, rgba(241, 88, 126, 1) 0%, rgba(249, 117, 112, 1) 100%);
+  }
+  
+  .btnEdit {
+    background-color: white !important;
+    border: none;
+    color: #0F4D5C;
+    padding: 10px;
+    width: 120px;
+  }
+  .body{
+    overflow-x: hidden;
+  }
+  .bgDash {
+    background: #faedf1 0% 0% no-repeat padding-box;
+  }
+  .responsivelist {
+    height: 85vh;
+    overflow: auto;
+  }
+  .styleCard {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  }
+  .cardbg {
+    background-color: white;
+  }
+  .imgSize {
+    width: 50px;
+  }
+  .cardImage {
+    height: 100%;
+    width: 100%;
+  }
+  .NoDataMessage{
+    text-align: center; padding-top: 15%; font-weight: bold;
+  }
+  .insterest {
+    background-color: #0F4D5C;
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  @media (max-width: 576px){
+    .responsivelist {
+        padding: 10px;
+      }
+      .cardbgRes {
+        width: 70%;
+      }
+  .responsivelist {
+    height: 90vh;
+    overflow: auto;
+  }
+      .cardImageRes {
+        width: 30%;
+      }
+      .NoDataMessage{
+        padding-top: 60%; 
+       }
+  }

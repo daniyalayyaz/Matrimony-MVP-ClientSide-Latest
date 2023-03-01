@@ -1,0 +1,161 @@
+<body>
+  <div class="container">
+    <div class="row pt-4 signupcard">
+      <div class="col-md-8 gridEight">
+        <form (submit)="gotoSignupFourthPage()">
+          <h3 class="ps-5" style="color: #0f4d5c">MORE PERSONAL DETAILS</h3>
+          <div class="row mt-4 ps-5 pe-5">
+            <div class="col-md-6">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Looks
+              </label>
+              <!-- <select class="form-select rounded-pill" aria-label="Default select example" name="Looks"
+                (change)="eventonKey($event)" [value]="Looks != null ? Looks : ''" required="true">
+                <option selected value="">Select Looks</option>
+                <option>Humble</option>
+                <option>Average</option>
+                <option>Attractive</option>
+                <option>Very Attractive</option>
+              </select> -->
+              <select class="form-select rounded-pill" aria-label="Default select example" name="Looks"
+              [value]="LooksSelect != null ? LooksSelect : ''" (change)="eventonKey($event)"
+              required="true">
+              <option selected value="">Select Looks</option>
+              <option *ngFor="let look of Looks" value="{{ look.name }}">
+                {{ look.name }}
+              </option>
+            </select>
+            </div>
+            <div class="col-md-6">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Complexion
+              </label>
+              <select class="form-select rounded-pill" aria-label="Default select example" name="Complexion"
+              [value]="ComplexionSelect != null ? ComplexionSelect : ''" (change)="eventonKey($event)"
+              required="true">
+              <option selected value="">Select Complexion</option>
+              <option *ngFor="let complexion of Complexion" value="{{ complexion.name }}">
+                {{ complexion.name }}
+              </option>
+            </select>
+            </div>
+          </div>
+          <div class="row mt-4 ps-5 pe-5">
+            <div class="col-md-6">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Build
+              </label>
+              <!-- <select class="form-select rounded-pill" aria-label="Default select example" name="build"
+                (change)="eventonKey($event)" [value]="build != null ? build : ''">
+                <option selected>Select Build</option>
+                <option>Chubby</option>
+                <option>Average</option>
+                <option>Athletic</option>
+              </select> -->
+              <select class="form-select rounded-pill" aria-label="Default select example" name="Build"
+              [value]="buildSelect != null ?  buildSelect : ''" (change)="eventonKey($event)"
+              [(ngModel)]="buildSelect"
+              required="true">
+              <option selected value="">Select Build</option>
+              <option *ngFor="let build of Build" value="{{ build.name }}">
+                {{ build.name }}
+              </option>
+            </select>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="height" class="form-label" style="color: #0f4d5c">Height</label>
+                <div class="input-group">
+                  <input type="number" class="form-control" id="feet" placeholder="Feet" (change)="eventonKey($event)"
+                  [(ngModel)]="height" [value]="height != null ? height : ''" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">ft</span>
+                  </div>
+                  <input type="number" class="form-control" id="inches" placeholder="inches" (change)="eventonKey($event)"
+                  [(ngModel)]="inches" [value]="inches != null ? inches : ''" />
+                  <div class="input-group-append">
+                    <span class="input-group-text">in</span>
+                  </div>
+                </div>
+              </div>
+              <!-- <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Height </label><br />
+              <input type="range" id="temp" name="height" list="tickmarks" (change)="eventonKey($event)"
+              [(ngModel)]="height" [value]="height != null ? height : ''" />
+
+              <datalist id="tickmarks">
+                <option value="91.44" label="3ft"></option>
+                <option value="121.92" label="4ft"></option>
+                <option value="152.4" label="5ft"></option>
+                <option value="182.88" label="6ft"></option>
+                <option value="213.36" label="7ft"></option>
+              </datalist> -->
+              <!-- <input
+                    type="text"
+                    class="form-control  rounded-pill"
+                    aria-label="Religious"
+                    aria-describedby="addon-wrapping"
+                    placeholder="ex: 5'10"
+                    name="height"
+                    (keyup)="eventonKey($event)"
+
+                  > -->
+            </div>
+          </div>
+
+          <div class="row mt-4 ps-5 pe-5">
+            <div class="col-md-12">
+              <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                Hobbies
+              </label>
+              <input type="text" class="form-control rounded-pill" aria-label="Age" aria-describedby="addon-wrapping"
+                placeholder="ex: Playing Football" name="hobbies" (change)="eventonKey($event)"
+                [value]="hobbies != null ? hobbies : ''" />
+            </div>
+          </div>
+          <div class="row mt-5 ps-5 pe-5">
+            <div class="col-md-6">
+              <button type="button" class="btnNext" (click)="gotoSignupSecondPage()">
+                Previous
+              </button>
+            </div>
+            <div class="col-md-6">
+              <button type="submit" class="btnNext">Next Step</button>
+            </div>
+          </div>
+          <div></div>
+        </form>
+      </div>
+      <div class="col-md-4 gridFour d-flex flex-column justify-content-evenly">
+        <span class="stepNxt"> 1 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnOne ms-5 me-5">
+          BASIC DETAILS
+        </button>
+        <span class="stepNxt"> 2 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+          PERSONAL DETAILS
+        </button>
+        <span class="step"> 3 </span>
+        <button style="background-color: #ffffff" type="button" class="btnThree ms-5 me-5">
+          MORE PERSONAL DETAILS
+        </button>
+        <span class="stepNxt"> 4 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
+          RESIDENTIAL DETAILS
+        </button>
+        <span class="stepNxt"> 5 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
+          PROFESSIONAL DETAILS
+        </button>
+        <span class="stepNxt"> 6 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnSix ms-5 me-5">
+          FAMILY DETAILS
+        </button>
+        <span class="stepNxt"> 7 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnSeven ms-5 me-5">
+          CONTACT DETAILS
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

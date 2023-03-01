@@ -1,0 +1,71 @@
+<div style="font-family: 'Poppins'; overflow-x: hidden;">
+    <nav class="navbar navbar-expand-lg bgColor mb-5 p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">NOTIFICATIONS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item" style="cursor: pointer;">
+                        <div class="fs-4 me-5 text-white">
+                            <i class="fa-solid fa-user text-white me-2"></i>
+                            Interests
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row"> 
+        <div class="col-md-12 right">
+            <div class="box shadow-sm rounded bg-white mb-3">
+                <div class="box-title border-bottom p-3">
+                    <h4 class="m-0">Recent</h4>
+                </div>
+                <div class="box-body p-0 ">
+                    <div class="p-3 d-flex align-items-center  border-bottom osahan-post-header bg-info"
+                        *ngFor="let show of latest.reverse()">
+                        <div class="d-flex " (click)="render(show)">
+                            <div class="dropdown-list-image mr-3">
+                                <img  class="rounded-circle"
+                                src="https://img.freepik.com/premium-vector/3d-notification-bell-icon_165488-3330.jpg?w=2000" alt="" />
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="text-truncate me-2 " style="font-weight: bold;">{{show.name}}</div>
+                                <div class="small" style="font-weight: bold; font-family: 'Poppins';">{{show.description}}</div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="box shadow-sm rounded bg-white mb-3">
+                <div class="box-title border-bottom p-3">
+                    <h4 class="m-0">Earlier</h4>
+                </div>
+                <div class="box-body p-0" >
+                    <div class="p-3 d-flex align-items-center bg-light border-bottom osahan-post-header"
+                        *ngFor="let show of earlier.reverse()" (click)="render(show)">
+                        
+                            <div class="dropdown-list-image mr-3">
+                                <img  class="rounded-circle"
+                                    src="https://img.freepik.com/premium-vector/3d-notification-bell-icon_165488-3330.jpg?w=2000" alt="" />
+                                    <!-- <i class="fas-sharp fas-solid fas-megaphone"></i> -->
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h6 style="font-weight: bold;" class="me-2">{{show.name}} </h6>
+                                <span>   </span>
+                                <h6 style="font-weight: bold; font-family: 'Poppins';">{{show.description}}</h6>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>

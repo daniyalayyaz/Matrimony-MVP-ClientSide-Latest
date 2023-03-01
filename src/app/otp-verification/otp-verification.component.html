@@ -1,0 +1,14 @@
+<div id="recaptcha-container"></div>
+<div style="font-family: 'georgia'">
+  <div class="gx-0 MainSection">
+    <!-- <i class="fa-solid fa-check-to-slot IconCheck"></i>  -->
+    <h1 class="Verification-Text">Enter your verification Code</h1>
+    <ng-otp-input
+      (onInputChange)="onOtpChange($event)"
+      [config]="{ length: 4 }"
+    ></ng-otp-input>
+    <button type="button" class="BtnHome" (click)="gotoDashboard()">
+      Submit
+    </button>
+  </div>
+</div>

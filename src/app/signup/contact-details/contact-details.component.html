@@ -1,0 +1,112 @@
+<body>
+  <div class="container">
+    <div class="row pt-4 signupcard">
+      <div class="col-md-8 gridEight">
+        <h3 class="ps-5" style="color: #0f4d5c">CONTACT DETAILS</h3>
+        <div class="form-check form-switch ms-5 mt-2">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+          <label class="form-check-label" for="flexSwitchCheckDefault">Lock Contact Details</label>
+        </div>
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Email <span style="color: red; font-weight: bolder;">*</span>
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: xyz@gmail.com" name="Email"
+              [value]="Email != null ? Email : ''" (keyup)="eventonKey($event)" />
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Personal Phone
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: +923xxxxxxxxx" name="Phone"
+              [value]="Phone != null ? Phone : ''" (keyup)="eventonKey($event)" />
+          </div>
+        </div>
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Parent's Contact
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: +923xxxxxxxxx" name="ParentsPhone"
+              [value]="ParentsPhone != null ? ParentsPhone : ''" (keyup)="eventonKey($event)" />
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Social Links (Facebook ID Link)
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: www.facebook.com/" name="FacebookLink"
+              [value]="FacebookLink != null ? FacebookLink : ''" (keyup)="eventonKey($event)" />
+          </div>
+        </div>
+
+        <div class="row mt-4 ps-5 pe-5">
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Social Links (Insta ID Link)
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: www.instagram.com/" name="InstaLink"
+              [value]="InstaLink != null ? InstaLink : ''" (keyup)="eventonKey($event)" />
+          </div>
+          <div class="col-md-6">
+            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+              Social Links (Twitter ID Link)
+            </label>
+            <input type="text" class="form-control rounded-pill" aria-label="Religious"
+              aria-describedby="addon-wrapping" placeholder="ex: www.twitter.com/" name="TwitterLink"
+              [value]="TwitterLink != null ? TwitterLink : ''" (keyup)="eventonKey($event)" />
+          </div>
+        </div>
+        <div class="row mt-5 ps-5 pe-5">
+          <div class="col-md-6">
+            <button type="button" class="btnNext" (click)="gotoSignupFourthPage()">
+              Previous
+            </button>
+          </div>
+
+          <div class="col-md-6">
+            <button type="button" class="btnNext" [disabled]=loader (click)="SubmitDetails()">
+              {{loader?'Please Wait...':'Submit'}}
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="col-md-4 gridFour d-flex flex-column justify-content-evenly">
+        <span class="stepNxt"> 1 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnOne ms-5 me-5">
+          BASIC DETAILS
+        </button>
+        <span class="stepNxt"> 2 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+          PERSONAL DETAILS
+        </button>
+        <span class="stepNxt"> 3 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnThree ms-5 me-5">
+          MORE PERSONAL DETAILS
+        </button>
+        <span class="stepNxt"> 4 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
+          RESIDENTIAL DETAILS
+        </button>
+        <span class="stepNxt"> 5 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
+          PROFESSIONAL DETAILS
+        </button>
+        <span class="stepNxt"> 6 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnSix ms-5 me-5">
+          FAMILY DETAILS
+        </button>
+        <span class="step"> 7 </span>
+        <button style="background-color: #ffffff" type="button" class="btnSeven ms-5 me-5">
+          CONTACT DETAILS
+        </button>
+      </div>
+    </div>
+  </div>
+</body>

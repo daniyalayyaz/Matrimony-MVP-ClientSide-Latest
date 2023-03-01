@@ -1,0 +1,209 @@
+<nav class="navbar navbar-expand-lg navbar-dark bgcolor p-3">
+    <div class="container">
+      <a class="navbar-brand">
+        Logo
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-md-auto gap-2">
+          <li class="nav-item rounded">
+            <a class="nav-link" aria-current="page" >
+              <i class="bi bi-house-fill me-2"></i>HOME
+            </a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link active" >
+              <i class="bi bi-people-fill me-2"></i>GALLERY
+            </a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link">
+              LOGIN
+            </a>
+          </li>
+          <li class="nav-item rounded">
+            <a class="nav-link">
+              REGISTER
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>    
+      <div class="container-fluid form-inline subNav">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <label class="form-label">Age</label>
+              <select
+                class="selectOption wdOption"
+                aria-label="Default select example"
+              >
+                <option class="optStyle" selected>Minimum Age</option>
+                <option class="optStyle" value="1">18</option>
+                <option class="optStyle" value="2">19</option>
+                <option class="optStyle" value="3">20</option>
+                <option class="optStyle" value="4">21</option>
+                <option class="optStyle" value="5">22</option>
+                <option class="optStyle" value="6">23</option>
+                <option class="optStyle" value="7">24</option>
+                <option class="optStyle" value="8">25</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <br/>
+              <select
+                class="selectOption wdOption mt-2"
+                aria-label="Default select example"
+              >
+                <option class="optStyle"  selected>Maximum Age</option>
+                <option class="optStyle"  value="1">18</option>
+                <option class="optStyle"  value="2">19</option>
+                <option class="optStyle"  value="3">20</option>
+                <option class="optStyle"  value="4">21</option>
+                <option class="optStyle"  value="5">22</option>
+                <option class="optStyle"  value="6">23</option>
+                <option class="optStyle"  value="7">24</option>
+                <option class="optStyle"  value="8">25</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Status</label>
+              <br/>
+              <select
+                class="selectOption wdOption"
+                aria-label="Default select example"
+              >
+                <option class="optStyle" value="1" selected>Punjab</option>
+                <option class="optStyle" value="2">Sindh</option>
+                <option class="optStyle" value="3">Khyber Pakhtunkhwa</option>
+                <option class="optStyle" value="4">Gilgit-Baltistan</option>
+                <option class="optStyle" value="5">Balochistan</option>
+                <option class="optStyle" value="6">Azad Jammu and Kashmir</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">City</label>
+              <br/>
+              <select
+                class="selectOption wdOption"
+                aria-label="Default select example"
+              >
+                <option class="optStyle" value="1" selected>Lahore</option>
+                <option class="optStyle" value="2">Karachi</option>
+                <option class="optStyle" value="3">Islamabad</option>
+                <option class="optStyle" value="4">Peshawar</option>
+                <option class="optStyle" value="5">Gilgit</option>
+                <option class="optStyle" value="6">Quetta</option>
+                <option class="optStyle" value="7">Muzaffarabad</option>
+                <option class="optStyle" value="8">Hyderabad</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Country</label>
+              <br/>
+              <select
+                class="selectOption wdOption"
+                aria-label="Default select example"
+              >
+                <option class="optStyle" value="1" selected>Pakistan</option>
+                <option class="optStyle" value="2">United Arab Emirates</option>
+                <option class="optStyle" value="3">Vietnam</option>
+                <option class="optStyle" value="4">Austria</option>
+                <option class="optStyle" value="5">Hungary</option>
+                <option class="optStyle" value="6">Turkey</option>
+                <option class="optStyle" value="7">Switzerland</option>
+                <option class="optStyle" value="8">Germany</option>
+                <option class="optStyle" value="9">Iran</option>
+                <option class="optStyle" value="10">United Kingdom</option>
+                <option class="optStyle" value="11">France</option>
+                <option class="optStyle" value="12">Kyrgyzstan</option>
+                <option class="optStyle" value="13">Lebanon</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="reset">
+                RESET
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="bgCardColor">
+      <div class="container">
+        <div class="row">
+              <div class="col-md-6 mt-5" *ngFor="let person of persons">
+                <div class="card mb-3 styleCard">
+                  <div class="row g-0 styleCard">
+                    <div class="col-md-4">
+                      <img
+                        src={{person.image}}
+                        class="rounded-start cardImage"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-8 cardbg">
+                      <div class="card-body">
+                        <div class="d-flex">
+                          <div class="me-auto">
+                            <h5 class="card-title">{{person.name}}</h5>
+                          </div>
+                          <div class="">
+                            <img
+                              src="https://bit.ly/3BJ3wIg"
+                              class="imgSize"
+                              alt="..."
+                            />
+                          </div>
+                        </div>
+
+                        <p class="card-text text-muted">
+                          {{person.gender}} | {{person.age}} | {{person.cast}}
+                        </p>
+                        <p class="card-text text-muted">
+                          {{person.training}} | {{person.profession}} | {{person.city}}
+                        </p>
+                        <p class="card-text text-muted">
+                          {{person.appearance}} | {{person.color}} | {{person.height}}
+                        </p>
+                        <div class="d-flex">
+                          <div class="me-auto">
+                            <img
+                              src={{pathmessage}}
+                              class="imgCard1"
+                              alt="..."
+                            />
+                          </div>
+                          <div>
+                            <img
+                              src={{pathheart}}
+                              class="imgCard2"
+                              alt="..."
+                            />
+                          </div>
+                          <div class="ms-auto">
+                            <button type="submit" class="insterest">
+                            Send Interest
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      </div>

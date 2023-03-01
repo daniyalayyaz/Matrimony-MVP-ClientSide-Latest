@@ -1,0 +1,41 @@
+<div style="font-family: 'georgia';">
+<div class="row justify-content-center bg-danger gx-0" style="height: 100vh;">
+  <div class="col-md-10 section-responsive">
+    <div class="row my-5 gx-0">
+      <div class="col-md-4">
+        <div class="black-bg">
+          <img class="loginimg"
+            src="https://yuliamoiseeva.com.au/wp-content/uploads/2021/03/wu-jianxiong-4TET084JWaA-unsplash-1024x1017.jpg" />
+        </div>
+      </div>
+      <div class="col-md-8 px-4" style="background-color: #FAEDF1">
+        <div class="row justify-content-center" style="height: 100%;">
+          <div class="col-md-8 vertical-align sub-section-responsive">
+            <h3 class="boldtext text-center mb-3">Welcome to Matrimony M.V.P</h3>
+            <p class="text-center mb-5" style="color: #707070">Start with your Social Account. Just one tap and you are done!</p>
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <button type="button" class="btn facebook-btn" (click)="gotoVerification()"><i class="fa-brands fa-facebook-f"></i>Login with Facebook</button>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <button type="button" class="btn google-btn" (click)="loginwithgmail()"> <i class="fa-brands fa-google"></i>Login with Google
+                  </button>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <button type="button" class="btn email-btn" (click)="gotologinwithemail()"> <i class="fa-solid fa-envelope icon-color" ></i>Login with Email
+                  </button>
+              </div>
+            </div>
+            <p class="text-center mt-5" style="color: #0F4D5C">Don't have an social account? <a (click)="gotoSignupFirstPage()"
+                style="cursor: pointer; font-weight: bold; text-decoration: underline; color: #ED7E9E;">Sign up</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

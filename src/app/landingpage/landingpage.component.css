@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand,
+.itac {
+    font-family: 'Marck Script', cursive;
+    font-family: 'Satisfy', cursive;
+}
+
+.itac {
+    font-family: 'Marck Script', cursive;
+    font-family: 'Satisfy', cursive;
+    font-size: 4rem;
+}
+
+.mb-9 {
+    margin-bottom: 5%;
+}
+
+li {
+    list-style: none;
+}
+
+.fle {
+    display: flex;
+    justify-content: space-evenly;
+    /* justify-items: space-between; */
+    flex-direction: row;
+
+}
+
+
+.main {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(https://yuliamoiseeva.com.au/wp-content/uploads/2021/03/wu-jianxiong-4TET084JWaA-unsplash-1024x1017.jpg) no-repeat top center;
+    height: 100vh;
+    background-size: cover;
+    width: 100%;
+}
+
+.navbar {
+    padding: 0 30px;
+}
+
+.navbar-nav .nav-item:hover {
+    border-bottom: 3px solid pink;
+}
+
+.pink {
+
+    /* UI Properties */
+    background-color: #ED7E9E;
+    border-radius: 4px;
+    opacity: 1;
+    color: white;
+    border: none;
+    width: 30%;
+    height: 40px;
+    margin-top: 10px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.blue {
+    margin-top: 10px;
+    width: 30%;
+    height: 40px;
+
+    /* UI Properties */
+    background-color: #0F4D5C;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    opacity: 1;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+.herosection {
+    padding-top: 15%;
+    color: white;
+    text-align: center;
+}
+
+.navitem {
+    color: white;
+    font-weight: bold;
+    font-family: 'Poppins';
+}
+
+.accordion-header {
+    color: rgba(19, 105, 105, 0.872);
+}
+
+.accordion-button {
+    background-color: rgba(255, 241, 241, 0.989);
+}
+
+.flex1 {
+
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex1 div {
+    margin: 0 12px;
+}
+
+.last {
+    text-align: center;
+    color: white;
+    padding-top: 4%;
+    height: 200px;
+
+    background: transparent linear-gradient(359deg, #FC7E6B 0%, #ED7E9E 100%) 0% 0% no-repeat padding-box;
+}
+
+.ypube i {
+    color: rgb(228, 147, 160);
+    box-shadow: 2px 2px 2px rgb(202, 156, 164);
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+.ypube {
+    position: relative;
+    top: 7rem;
+    left: 6rem;
+}
+
+.ypube1 {
+    position: relative;
+    top: 2rem;
+    left: 8rem;
+    color: white;
+    background-color: green;
+    width: 5rem;
+    border-radius: 2px;
+}
+
+.ypube1 i {
+    padding: 5px;
+
+}
+
+.collapsed,
+.accordion-button {
+    color: rgba(19, 105, 105, 0.872);
+    font-weight: bold;
+}
+
+.navbar-brand {
+    color: pink;
+
+}
+
+.hovering {
+    transition: transform .2s;
+
+}
+
+.hovering:hover {
+    transform: scale(1.5);
+}
+
+.footer {
+    background-color: rgba(19, 105, 105, 0.872);
+    color: white;
+    text-align: center;
+    padding: 3px;
+}
+
+.btns {
+    text-align: center;
+
+}
+
+.border1 {
+    border-bottom: 4px solid rgb(214, 96, 116);
+    border-radius: 2px;
+    width: 10%;
+    margin: auto;
+
+
+}
+
+.accordion-item {
+    background-color: rgba(19, 105, 105, 0.872);
+    color: white;
+}
+
+.accordion-header {
+    border: 2px solid rgba(19, 105, 105, 0.872);
+    border-radius: 5px;
+}
+
+/* .imgaes1{
+margin-top: ;
+} */
+.its {
+    padding: 0 50px;
+}
+
+.fit-image {
+    height: 100%;
+    width: 100%;
+}
+
+.accordion-r {
+
+    padding: 10%;
+    /* width: 30%; */
+}
+
+.card {
+    padding: 20px;
+    color: grey
+}
+
+.card .text {
+    color: rgba(19, 105, 105, 0.872);
+}
+
+.card:hover {
+    background-color: pink;
+    color: white;
+    box-shadow: 2px 2px 1px 7px pink;
+}
+
+.card:hover {
+    background-color: pink;
+    color: white;
+    box-shadow: 2px 2px 1px 7px pink;
+}
+
+.img1 {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+@media screen and (max-width:405px) {
+    .flex1 {
+        flex-direction: column;
+    }
+
+    .images div {
+        margin-top: 2%;
+    }
+}
+
+@media screen and (max-width:549px) {
+    .col-md-6 {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex1 {
+        flex-direction: column;
+    }
+
+    .images div {
+        margin-top: 2%;
+    }
+    .last{
+        padding-top: 15%;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .herosection {
+        padding: 7rem 5px 20% 5px;
+    }
+}
+
+@media screen and (max-width:520px) {
+    .herosection {
+        padding: 7rem 20px 50% 5px;
+    }
+
+    .itac {
+
+        font-size: 2rem;
+    }
+}

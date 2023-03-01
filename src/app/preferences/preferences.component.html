@@ -1,0 +1,157 @@
+<div style="font-family: 'Poppins';" class="bgDash">
+    <nav class="navbar navbar-expand-lg bgColor mb-5 p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">PREFERENCES</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item" style="cursor: pointer;">
+                        <div class="fs-4 me-5 text-white">
+                            <i class="fa-solid fa-user text-white me-2"></i>
+                            Interests
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+            <h2 class="h3 mb-4 page-title">Settings</h2>
+            <div class="my-4">
+                <ul class="nav nav-tabs mb-4 " id="myTab" role="tablist">
+                    <li class="nav-item ">
+                        <a class="nav-link active backgroundColor" id="contact-tab" data-toggle="tab" href="#contact"
+                            role="tab" aria-controls="contact" aria-selected="false">Notifications</a>
+                    </li>
+                </ul>
+                <h5 class="mb-0 mt-5">Notifications Settings</h5>
+                <p>Select notification you want to receive</p>
+                <hr class="my-4" />
+                <strong class="mb-0">Security</strong>
+                <p>Control security alert you will be notified.</p>
+                <div class="list-group mb-5 shadow">
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Unusual activity notifications</strong>
+                                <p class="text-muted mb-0">Donec in quam sed urna bibendum tincidunt quis mollis mauris.
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" [checked]="Activenotification"
+                                        #Activenotificationbox type="checkbox" role="switch"
+                                        id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Number status Hide/Show</strong>
+                                <p class="text-muted mb-0">Fusce lacinia elementum eros, sed vulputate urna eleifend
+                                    nec.</p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" #numberstatusbox
+                                        (change)="savenumber(numberstatusbox.checked)" [checked]="numberstatus"
+                                        type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Lock Gallery</strong>
+                                <p class="text-muted mb-0">This will allow the other users to show your gallery pictures.</p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" #isGalleryLock
+                                        (change)="lockMyGallery(isGalleryLock.checked)" [checked]="lockGallery"
+                                        type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <strong class="mb-0">System</strong>
+                <p>Please enable system alert you will get.</p>
+                <div class="list-group mb-5 shadow">
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Notify me about new features and updates</strong>
+                                <p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" [checked]="featurestatus"
+                                        (change)="savefeature(featurestatusbox.checked)" #featurestatusbox
+                                        type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Notify me by email for latest news</strong>
+                                <p class="text-muted mb-0">Nulla et tincidunt sapien. Sed eleifend volutpat elementum.
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" [checked]="latestnews"
+                                        (change)="latestnewss(latestnewsbox.checked)" #latestnewsbox type="checkbox"
+                                        role="switch" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <strong class="mb-0">Notify me about tips on using account</strong>
+                                <p class="text-muted mb-0">Donec in quam sed urna bibendum tincidunt quis mollis mauris.
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" [checked]="Profilestatus" #Profilestatusbox
+                                        (change)="Profilestatuss(Profilestatusbox.checked)" type="checkbox"
+                                        role="switch" id="flexSwitchCheckDefault">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8 mx-auto">
+        <form #entryForm="ngForm" (ngSubmit)="entryForm.valid && onSubmit(entryForm)">
+            <div class="custom-control form-control custom-switch">
+                <button type="submit" class="btn btn-danger" 
+                #requestToDelete="ngModel" [(ngModel)]="package.requestToDelete" name="requestToDelete" 
+                (click)="onSaveUsernameChanged($event)">Delete Account</button>
+              </div>
+        </form>
+        </div>
+    </div>
+</div>

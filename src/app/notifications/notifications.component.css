@@ -1,0 +1,33 @@
+.bgColor {
+    background: linear-gradient(0deg, rgba(241, 88, 126, 1) 0%, rgba(249, 117, 112, 1) 100%);
+  }
+  .sapc{
+    justify-content: space-around;
+  }
+  .btnEdit {
+    background-color: white !important;
+    border: none;
+    color: #0F4D5C;
+    padding: 10px;
+    width: 120px;
+  }
+  body{
+    margin-top:20px;
+    background-color: #f0f2f5;
+}
+.dropdown-list-image {
+    position: relative;
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 20px;
+}
+.dropdown-list-image img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.btn-light {
+    color: #2cdd9b;
+    background-color: #e5f7f0;
+    border-color: #d8f7eb;
+}

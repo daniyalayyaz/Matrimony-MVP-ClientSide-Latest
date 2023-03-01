@@ -1,0 +1,208 @@
+<div style="font-family: 'Poppins';">
+
+    <nav class="navbar navbar-expand-lg bgColor p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">MATCH-MAKING</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+          <!-- <div
+            style="background-color: #0F4D5C; color: white"
+            class="mt-5"
+          >
+            <div class="container">
+              <div class="row">
+                <div class="col-md-2">
+                  <label class="form-label mt-3">Age</label>
+                  <br/>
+                  <select
+                    style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                    class="selectOption"
+                    aria-label="Default select example"
+                  >
+                    <option class="optStyle" selected>
+                      Minimum Age
+                    </option>
+                    <option class="optStyle" value="1">
+                      18
+                    </option>
+                    <option class="optStyle" value="2">
+                      19
+                    </option>
+                    <option class="optStyle" value="3">
+                      20
+                    </option>
+                    <option class="optStyle" value="4">
+                      21
+                    </option>
+                    <option class="optStyle" value="5">
+                      22
+                    </option>
+                    <option class="optStyle" value="6">
+                      23
+                    </option>
+                    <option class="optStyle" value="7">
+                      24
+                    </option>
+                    <option class="optStyle" value="8">
+                      25
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <select
+                    style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                    class="selectOption mt-5"
+                    aria-label="Default select example"
+                  >
+                    <option class="optStyle" selected>
+                      Maximum Age
+                    </option>
+                    <option class="optStyle" value="1">
+                      18
+                    </option>
+                    <option class="optStyle" value="2">
+                      19
+                    </option>
+                    <option class="optStyle" value="3">
+                      20
+                    </option>
+                    <option class="optStyle" value="4">
+                      21
+                    </option>
+                    <option class="optStyle" value="5">
+                      22
+                    </option>
+                    <option class="optStyle" value="6">
+                      23
+                    </option>
+                    <option class="optStyle" value="7">
+                      24
+                    </option>
+                    <option class="optStyle" value="8">
+                      25
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label mt-3">From</label>
+                  <br/>
+                  <select
+                    style="background-color: rgba(255, 255, 255, 0.5); width: 100%;"
+                    class="selectOption wdOption"
+                    aria-label="Default select example"
+                  >
+                    <option class="optStyle" value="1" selected>
+                      Pakistan
+                    </option>
+                    <option class="optStyle" value="2">
+                      United Arab Emirates
+                    </option>
+                    <option class="optStyle" value="3">
+                      Vietnam
+                    </option>
+                    <option class="optStyle" value="4">
+                      Austria
+                    </option>
+                    <option class="optStyle" value="5">
+                      Hungary
+                    </option>
+                    <option class="optStyle" value="6">
+                      Turkey
+                    </option>
+                    <option class="optStyle" value="7">
+                      Switzerland
+                    </option>
+                    <option class="optStyle" value="8">
+                      Germany
+                    </option>
+                    <option class="optStyle" value="9">
+                      Iran
+                    </option>
+                    <option class="optStyle" value="10">
+                      United Kingdom
+                    </option>
+                    <option class="optStyle" value="11">
+                      France
+                    </option>
+                    <option class="optStyle" value="12">
+                      Kyrgyzstan
+                    </option>
+                    <option class="optStyle" value="13">
+                      Lebanon
+                    </option>
+                  </select>
+                </div>
+                <div class="col-md-3 mt-2">
+                  <label class="form-label lblGender ml-5">Gender:</label>
+                  <img src={{pathmale}} alt="..." width="80" height="90" />
+                  <img src={{pathfemale}} alt="..." width="80" height="90" />
+                </div>
+              </div>
+            </div>
+          </div> -->
+    
+          <div class="bgCardColor">
+            <div class="container">
+              <div class="row">
+                    <div class="col-md-6 mt-5" *ngFor="let person of personList">
+                      <div class="card mb-3 styleCard" style="width: 100%; cursor: pointer;">
+                        <div class="row g-0 styleCard">
+                            <div class="col-md-4 cardImageRes">
+                                <img src="https://bit.ly/3RzZK9J" class="rounded-start cardImage" alt="..." />
+                            </div>
+                            <div class="col-md-8 cardbg cardbgRes">
+                                <div class="card-body">
+                                    <div class="d-flex">
+                                        <div class="me-auto">
+                                            <h5 class="card-title">{{person.name}}</h5>
+                                        </div>
+                                        <div class="">
+                                            <img src="https://bit.ly/3BJ3wIg" class="imgSize"
+                                                alt="..." />
+                                        </div>
+                                    </div>
+    
+                                    <p class="card-text text-muted">
+                                      {{person.gender}} | {{person.age}} | {{person.professional}}
+                                    </p>
+                                    <p class="card-text text-muted">
+                                      {{person.city}} | {{person.country}}
+                                    </p>
+                                    <p class="card-text text-muted">
+                                      {{person.caste}} | {{person.religious}} | {{person.montherTonque}}
+                                    </p>
+                                    <div class="d-flex mt-2">
+                                        <div class="ms-auto">
+                                            <button type="submit" class="insterest">
+                                                View Profile
+                                            </button>
+                                        </div>
+                                        <div class="ms-auto">
+                                            <button type="submit" class="insterest">
+                                              Add to Favorites
+                                            </button>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+              </div>
+            </div>
+          </div></div>

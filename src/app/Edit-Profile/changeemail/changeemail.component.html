@@ -1,0 +1,67 @@
+<div style="font-family: 'Poppins';">
+    <!--  NAVBAR-->
+    <nav class="navbar navbar-expand-lg bgColor p-4">
+        <div class="container">
+            <a class="navbar-brand text-white fs-4">LOGO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav resnav">
+                    <li class="nav-item" (click)="gotoInterests()" style="cursor: pointer;">
+                        <div class="fs-4 me-5 text-white">
+                            <i class="fa-solid fa-user text-white me-2"></i>
+                            Interests
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btnEdit" type="button">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            LOG OUT
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- SIDE NAVBAR -->
+    <div class="sidenav">
+        <img class="sidenav-img"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="">
+            <a (click)="gotoEditProfile()" style="cursor: pointer;"> Edit My Profile</a>
+        <a (click)="gotoEditPhotos()" style="cursor: pointer;"> Edit My Photos</a>
+        <a (click)="gotoEditUsername()" style="cursor: pointer;">Change Username</a>
+        <a (click)="gotoEditEmail()" style="cursor: pointer;">Change Email</a>
+        <a (click)="gotoEditPassword()" style="cursor: pointer;"> Change Password</a>
+        <a (click)="gotoEditPhone()" style="cursor: pointer;">Change Phone</a>
+    </div>
+
+    <div class="about">
+        <div class="main-card">
+            <h1>Change Email</h1>
+            <hr>
+            <!-- <form> -->
+                <label>New Email</label>
+                <input [(ngModel)]="email" type="text">
+                <br>
+
+                <label>Confirm New Email</label>
+                <input  [(ngModel)]="confirmemail" type="text">
+                <br>
+
+                <label>Account Password</label>
+                <input   [(ngModel)]="password" type="password">
+                <br>
+                <br>
+                <button class="btn btn-primary buttn" (click)="changeemail()">Update</button>
+                <br><br>
+                <a href="" class="text-decoration-none  link" >Send me a
+                    <b>one-time Password</b>
+                </a>
+                <br>
+            <!-- </form> -->
+        </div>
+    </div>
+
+</div>
