@@ -54,7 +54,6 @@
               </select> -->
               <select class="form-select rounded-pill" aria-label="Default select example" name="Build"
               [value]="buildSelect != null ?  buildSelect : ''" (change)="eventonKey($event)"
-              [(ngModel)]="buildSelect"
               required="true">
               <option selected value="">Select Build</option>
               <option *ngFor="let build of Build" value="{{ build.name }}">

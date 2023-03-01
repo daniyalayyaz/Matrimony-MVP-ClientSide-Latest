@@ -77,7 +77,6 @@ loader:any;
       complexion:JSON.parse(localStorage.getItem('MorePersonalDetails') as string).Complexion,
       height:JSON.parse(localStorage.getItem('MorePersonalDetails') as string).height,
       inches:JSON.parse(localStorage.getItem('MorePersonalDetails') as string).inches,
-
       build:JSON.parse(localStorage.getItem('MorePersonalDetails') as string).Build,
       hobbies:JSON.parse(localStorage.getItem('MorePersonalDetails') as string).hobbies,
       country:JSON.parse(localStorage.getItem('ResidentialDetails') as string).Country,
