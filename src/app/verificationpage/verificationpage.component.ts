@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-verificationpage',
@@ -14,7 +15,7 @@ check=false;
     private route: ActivatedRoute) {
   this.route.paramMap.subscribe((params: any) => {
     this.id = params?.get("id") || "";
-    this.http.post("{{environment.url}}/api/verify",  {
+    this.http.post(`${environment.url}/api/user/verify`,  {
      
       token:this.id
    
