@@ -1,0 +1,35 @@
+body {
+    background: transparent linear-gradient(180deg, #fc7e6b 0%, #ef5281 100%) 0%
+      0% no-repeat padding-box;
+      height: 100vh;
+      font-family: Georgia, Times, "Times New Roman", serif;
+
+  }
+.verificationcard{
+    height: 80vh;
+    width: 100%;
+    background-color: #FAEDF1;
+
+}
+.emailcard{
+border-top: 1px solid orange;
+border-right: 1px solid orange;
+border-bottom: 1px solid orange;
+border-left: 8px solid orange;
+}
+.phonecard{
+        border-top: 1px solid red;
+        border-right: 1px solid red;
+        border-bottom: 1px solid red;
+        border-left: 8px solid red;
+}
+  .btnUI {
+    color: #0f4d5c;
+    font-weight: bolder
+  }
+
+  @media (max-width: 576px){
+    .cardres{
+        padding: 20px;
+    }
+  }

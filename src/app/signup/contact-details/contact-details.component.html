@@ -7,7 +7,7 @@
           <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
           <label class="form-check-label" for="flexSwitchCheckDefault">Lock Contact Details</label>
         </div>
-        <div class="row mt-4 ps-5 pe-5">
+        <!-- <div class="row mt-4 ps-5 pe-5">
           <div class="col-md-6">
             <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
               Email <span style="color: red; font-weight: bolder;">*</span>
@@ -24,7 +24,7 @@
               aria-describedby="addon-wrapping" placeholder="ex: +923xxxxxxxxx" name="Phone"
               [value]="Phone != null ? Phone : ''" (keyup)="eventonKey($event)" />
           </div>
-        </div>
+        </div> -->
         <div class="row mt-4 ps-5 pe-5">
           <div class="col-md-6">
             <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -63,15 +63,11 @@
           </div>
         </div>
         <div class="row mt-5 ps-5 pe-5">
-          <div class="col-md-6">
-            <button type="button" class="btnNext" (click)="gotoSignupFourthPage()">
-              Previous
-            </button>
-          </div>
+    
 
-          <div class="col-md-6">
+          <div class="col-md-12">
             <button type="button" class="btnNext" [disabled]=loader (click)="SubmitDetails()">
-              {{loader?'Please Wait...':'Submit'}}
+              {{loader?'Please Wait...':'Save'}}
             </button>
           </div>
         </div>
@@ -80,33 +76,37 @@
       <div class="col-md-4 gridFour d-flex flex-column justify-content-evenly">
         <span class="stepNxt"> 1 </span>
         <button style="background-color: #91a8ad" type="button" class="btnOne ms-5 me-5">
-          BASIC DETAILS
+            CREATE ACCOUNT
         </button>
         <span class="stepNxt"> 2 </span>
         <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
-          PERSONAL DETAILS
+            BASIC DETAILS
         </button>
         <span class="stepNxt"> 3 </span>
-        <button style="background-color: #91a8ad" type="button" class="btnThree ms-5 me-5">
-          MORE PERSONAL DETAILS
+        <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+            PERSONAL DETAILS
         </button>
         <span class="stepNxt"> 4 </span>
-        <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
-          RESIDENTIAL DETAILS
+        <button style="background-color: #91a8ad" type="button" class="btnThree ms-5 me-5">
+            MORE PERSONAL DETAILS
         </button>
         <span class="stepNxt"> 5 </span>
-        <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
-          PROFESSIONAL DETAILS
+        <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
+            RESIDENTIAL DETAILS
         </button>
         <span class="stepNxt"> 6 </span>
+        <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
+            PROFESSIONAL DETAILS
+        </button>
+        <span class="stepNxt"> 7 </span>
         <button style="background-color: #91a8ad" type="button" class="btnSix ms-5 me-5">
-          FAMILY DETAILS
+            FAMILY DETAILS
         </button>
-        <span class="step"> 7 </span>
+        <span class="step"> 8 </span>
         <button style="background-color: #ffffff" type="button" class="btnSeven ms-5 me-5">
-          CONTACT DETAILS
+            CONTACT DETAILS
         </button>
-      </div>
+    </div>
     </div>
   </div>
 </body>

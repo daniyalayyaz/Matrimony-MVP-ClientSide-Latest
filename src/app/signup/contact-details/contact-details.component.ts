@@ -55,13 +55,13 @@ loader:any;
   RegisterUsers() {
     this.loader=true;
     const d = { 
-      email: JSON.parse(localStorage.getItem('ContactDetails') as string).Email,
-      personalContact: JSON.parse(localStorage.getItem('ContactDetails') as string).Phone,
+      email: JSON.parse(localStorage.getItem('SignupDetails') as string).email,
+      personalContact: JSON.parse(localStorage.getItem('SignupDetails') as string).phone,
       parentContact: JSON.parse(localStorage.getItem('ContactDetails') as string).ParentsPhone,
       socialLinkFb: JSON.parse(localStorage.getItem('ContactDetails') as string).FacebookLink,
       socialLinkInsta: JSON.parse(localStorage.getItem('ContactDetails') as string).InstaLink,
       socialLinkTwitter: JSON.parse(localStorage.getItem('ContactDetails') as string).TwitterLink,
-      name: JSON.parse(localStorage.getItem('PersonalDetails') as string).name,
+      name: JSON.parse(localStorage.getItem('SignupDetails') as string).name,
       profileCreated: JSON.parse(localStorage.getItem('BasicDetails') as string).ProfileCreatedFor,
       gender: JSON.parse(localStorage.getItem('BasicDetails') as string).GenderSelected,
       age: JSON.parse(localStorage.getItem('PersonalDetails') as string).age,
@@ -107,7 +107,7 @@ loader:any;
         localStorage.setItem(LocalStorageItem.LOGGED_USER, JSON.stringify(res.user));
         this.loader=false;
         this.toasterservice.success("Verification email has been sent to your provided email.");
-        this.router.navigateByUrl(`preference`);
+        this.router.navigateByUrl(`Verification-Screen`);
       }
      },error => {
       this.loader=false;

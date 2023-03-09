@@ -48,6 +48,8 @@ import { BlockedusersComponent } from './blockedusers/blockedusers.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginwithemailComponent } from './loginwithemail/loginwithemail.component';
 import { PreferenceComponent } from './signup/preference/preference.component';
+import { CreateAccountComponent } from './signup/create-account/create-account.component';
+import { VerificationScreenComponent } from './signup/verification-screen/verification-screen.component';
 
 
 @NgModule({
@@ -85,6 +87,8 @@ import { PreferenceComponent } from './signup/preference/preference.component';
     ChatComponent,
     LoginwithemailComponent,
     PreferenceComponent,
+    CreateAccountComponent,
+    VerificationScreenComponent,
     
   ],
   imports: [

@@ -36,6 +36,6 @@ export class BasicDetailsComponent {
     console.log(JSON.parse(localStorage.getItem('BasicDetails') as string))
     this.router.navigate(['Personal-Details']);
 
-}
+}     
 
 }

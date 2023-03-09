@@ -28,7 +28,7 @@ export class  LoginComponent extends UnsubscribeHandelr implements OnInit {
   }
 
   gotoSignupFirstPage(){
-    this.router.navigate(['Basic-Details']);
+    this.router.navigate(['Create-Account']);
 }
 gotologinwithemail(){
   this.router.navigate(['loginwithemail']);

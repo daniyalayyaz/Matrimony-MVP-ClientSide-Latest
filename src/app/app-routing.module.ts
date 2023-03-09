@@ -33,11 +33,14 @@ import { ChatComponent } from './chat/chat.component';
 import { BlockedusersComponent } from './blockedusers/blockedusers.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { PreferenceComponent } from './signup/preference/preference.component';
+import { CreateAccountComponent } from './signup/create-account/create-account.component';
+import { VerificationScreenComponent } from './signup/verification-screen/verification-screen.component';
 
 const routes: Routes = [
   {path: '', component: LandingpageComponent},
   {path:'Login', component: LoginComponent},
   {path:'loginPage',component: LoginComponent},
+  {path:'Create-Account', component: CreateAccountComponent},
   {path:'Basic-Details', component: BasicDetailsComponent},
   {path:'Personal-Details', component: PersonalDetailsComponent},
   {path:'More-Personal-Details', component: MorePersonalDetailsComponent},
@@ -45,6 +48,7 @@ const routes: Routes = [
   {path:'Professional-Details', component: ProfessionalDetailsComponent},
   {path:'Family-Details', component: FamilyDetailsComponent},
   {path:'Contact-Details', component: ContactDetailsComponent},
+  {path:'Verification-Screen', component: VerificationScreenComponent},
   {path:'preference',component:PreferenceComponent},
   {path:'Dashboard', component: DashboardComponent},
   {path: 'Profile/:id', component: ProfileComponent},

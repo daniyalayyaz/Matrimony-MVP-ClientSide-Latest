@@ -1,0 +1,99 @@
+<body>
+    <div class="container">
+        <div class="row pt-4 signupcard">
+            <div class="col-md-8 gridEight">
+                <form (submit)="gotoSignupSecondPage()">
+                    <h3 class="ps-5" style="color: #0f4d5c">CREATE NEW ACCOUNT</h3>
+                    <div class="row mt-4 ps-5 pe-5">
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                                Name
+                            </label>
+
+                            <input type="text" class="form-control rounded-pill" aria-label="Name" name="name"
+                                [value]="name != null ? name : ''" aria-describedby="addon-wrapping"
+                                placeholder="Enter Your Name" (keyup)="eventonKey($event)" required="true" />
+                        </div>
+                    </div>
+                    <div class="row mt-4 ps-5 pe-5">
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                                Email
+                            </label>
+
+                            <input type="email" class="form-control rounded-pill" aria-label="Email" name="email"
+                                [value]="email != null ? email : ''" aria-describedby="addon-wrapping"
+                                placeholder="Enter Your Personal Email" (keyup)="eventonKey($event)" required="true" />
+                        </div>
+                    </div>
+                    <div class="row mt-4 ps-5 pe-5">
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                                Phone
+                            </label>
+
+                            <input type="tel" class="form-control rounded-pill" aria-label="Phone" name="phone"
+                                [value]="phone != null ? phone : ''" aria-describedby="addon-wrapping"
+                                placeholder="Enter Your Personal Phone Number" (keyup)="eventonKey($event)"
+                                required="true" />
+                        </div>
+                    </div>
+                    <div class="row mt-4 ps-5 pe-5">
+                        <div class="col-md-12">
+                            <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                                Create Password
+                            </label>
+
+                            <input type="password" class="form-control rounded-pill" aria-label="Password"
+                                name="password" [value]="password!= null ? password: ''"
+                                aria-describedby="addon-wrapping"
+                                placeholder="Password should be at least 8 characters long" (keyup)="eventonKey($event)"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="row mt-5 ps-5 pe-5">
+                        <div class="col-md-12">
+                            <button type="submit" class="btnNext">SAVE & NEXT</button>
+                        </div>
+                    </div>
+                    <div></div>
+                </form>
+            </div>
+            <div class="col-md-4 gridFour d-flex flex-column justify-content-evenly">
+                <span class="step"> 1 </span>
+                <button style="background-color: #ffffff" type="button" class="btnOne ms-5 me-5">
+                    CREATE ACCOUNT
+                </button>
+                <span class="stepNxt"> 2 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+                    BASIC DETAILS
+                </button>
+                <span class="stepNxt"> 3 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnTwo ms-5 me-5">
+                    PERSONAL DETAILS
+                </button>
+                <span class="stepNxt"> 4 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnThree ms-5 me-5">
+                    MORE PERSONAL DETAILS
+                </button>
+                <span class="stepNxt"> 5 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnFour ms-5 me-5">
+                    RESIDENTIAL DETAILS
+                </button>
+                <span class="stepNxt"> 6 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnFive ms-5 me-5">
+                    PROFESSIONAL DETAILS
+                </button>
+                <span class="stepNxt"> 7 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnSix ms-5 me-5">
+                    FAMILY DETAILS
+                </button>
+                <span class="stepNxt"> 8 </span>
+                <button style="background-color: #91a8ad" type="button" class="btnSeven ms-5 me-5">
+                    CONTACT DETAILS
+                </button>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,32 @@
+<body>
+<div class="container py-5">
+    <div class="card verificationcard">
+        <h2 class="text-center pt-4">Account Verification</h2>
+        <h6 class="text-center">For security purposes please complete at least one of the following verification steps</h6>
+    <div class="row pt-4 ">
+      <div class="col-md-6 mx-auto cardres">
+        <div class="card emailcard">
+          <div class="card-body">
+            <h5 class="card-title">Email verification</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Check your email and follow the instructions to verify your email</h6>
+            <button type="button" class="btn btnUI">RESEND EMAIL <i class="fa-solid fa-arrow-rotate-left"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-4 ">
+
+      <div class="col-md-6 mx-auto cardres">
+        <div class="card phonecard">
+          <div class="card-body">
+            <h5 class="card-title">Phone verification</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Please verify your mobile number</h6>
+            <button type="button" class="btn btnUI">VERIFY <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <button type="button" class="text-end" style="padding: 30px; color: #0f4d5c; font-weight: bold; border: none; background-color: transparent;" (click)="gotoPreferences()">SKIP <i class="fa-solid fa-forward"></i></button>
+    </div>
+</div>
+  </body>
