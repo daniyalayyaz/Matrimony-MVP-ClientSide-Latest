@@ -23,7 +23,8 @@ export class ProfileComponent extends UnsubscribeHandelr implements OnInit {
   pathleft: string = "../../assets/left.png";
   pathmessage: string = "../../assets/message.png";
   pathheart: string = "../../assets/pinkheart.png";
-  pathright: string = "../../assets/right.png"
+  pathright: string = "../../assets/right.png";
+  confidentialData: string ="../../assets/Confidential-data.png"
 
   checknum?: boolean;
   profilepic?: boolean;
@@ -52,7 +53,9 @@ export class ProfileComponent extends UnsubscribeHandelr implements OnInit {
   onCloseHandled() {
     this.display = "none";
   }
-
+  gotoChat() {
+    this.router.navigate(['Chat/' + this.activateRoute.snapshot.params['id']]);
+  }
 
   ngOnInit(): void {
     document.body.scrollTop = 0;

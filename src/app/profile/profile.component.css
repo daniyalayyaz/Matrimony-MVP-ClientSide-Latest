@@ -6,7 +6,6 @@
   ngb-carousel .wrapper>img {
     position: absolute;
   } */
-
 .boxBtn {
     border: 2px solid white;
     height: 90px;
@@ -80,18 +79,35 @@
     list-style: none;
     color: #ED7E9E;
 }
-
+.ProfileHeadings{
+    color: #ED7E9E;
+    font-size: 1em
+}
+.ProfileDetails{
+    font-size: 1em
+}
 .infoOfPoint {
     list-style: none;
     color: #0F4D5C;
 }
+.OnWebAvatar{
+    border-radius: 10px;
+    width: 80%;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.blureffect{
+    filter: blur(5px);
+}
+
 @media (max-width: 576px){
     .resImgHide{
         padding: 10px;
     }
-    .bgRow{
+    /* .bgRow{
         height: 10%;
-    }
+    } */
     .resfont{
         font-size: 24px;
     }
@@ -119,20 +135,29 @@
     .resImgHide{
         display: none;
     }
-    .btnRqt{
+    /* .btnRqt{
         display: none;
-    }
+    } */
     .cardEdit{
         margin: 0 auto;
     }
+    .BtnRes{
+        margin-bottom: 20px
+    }
+    .carouselres{
+        margin: 20px
+    }
+    .Iconres{
+        left: 33% !important
+    }
     .OnMobileAvatar{
         border-radius: 50% !important;
-        height: 120px;
-        width: 120px;
+        height: 150px;
+        width: 150px;
         border: 5px solid white;
-        margin-bottom: -50px;
+        /* margin-bottom: -50px; */
     }
-    .bgRow{
+    /* .bgRow{
         padding-top: 50px !important;
-    }
+    } */
 }

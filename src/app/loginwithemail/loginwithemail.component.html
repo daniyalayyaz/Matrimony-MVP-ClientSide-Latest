@@ -1,16 +1,13 @@
 <ng-template #mymodal let-modal >
   <div *ngFor="let obj of data">
   <div class="modal-header bgColor">
-    <h4 class="modal-title" id="modal-basic-title">{{obj.name}}</h4>
-    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <!-- <span aria-hidden="true">×</span> -->
-    </button>
+    <h4 class="modal-title" id="modal-basic-title" style="color: white;">{{obj.name}}</h4>
   </div>
-  <div class="modal-body bgColor ">
+  <div class="modal-body">
     {{obj.description}}
   </div>
   <div class="modal-footer ">
-    <button type="button" class="btn " (click)="modal.close('Save click')">Ok</button>
+    <button type="button" class="btn " (click)="modal.close('Save click')">Close</button>
   </div>
 </div>
 </ng-template>
