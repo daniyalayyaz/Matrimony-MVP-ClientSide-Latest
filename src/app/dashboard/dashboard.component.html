@@ -39,8 +39,10 @@
                                 Logout
 
                             </button> -->
-                            <div *ngIf="packageNname" style="background-color: #E33365; border-radius: 8px; padding: 10px;">
-                                <h6  style="font-weight: bold; font-family: 'Poppins'; color: white;"><i class="fa-solid fa-crown" style="color:gold
+                            <div *ngIf="packageNname"
+                                style="background-color: #E33365; border-radius: 8px; padding: 10px;">
+                                <h6 style="font-weight: bold; font-family: 'Poppins'; color: white;"><i
+                                        class="fa-solid fa-crown" style="color:gold
                                 "></i> {{packageNname}}</h6>
                             </div>
 
@@ -54,15 +56,15 @@
                                 
                             </button> -->
 
-                            <div class="form-check form-switch" >
+                            <div class="form-check form-switch">
                                 <input class="form-check-input" #saveUserNameCheckBox type="checkbox" role="switch"
-                                 [checked]="saveUsername"
+                                    [checked]="saveUsername"
                                     (change)="onSaveUsernameChanged(saveUserNameCheckBox.checked)"
                                     id="flexSwitchCheckDefault" [disabled]="!editAccess">
                                 <label class="form-check-label" for="flexSwitchCheckDefault">Show Online</label>
                             </div>
 
-                  
+
                         </div>
                     </div>
                     <div class="text-center" *ngIf="imageUrl;else profile">
@@ -74,9 +76,9 @@
                     </div>
                     <ng-template #profile>
                         <div class="text-center">
-                        <img src="https://cdn.techjuice.pk/wp-content/uploads/2015/02/wallpaper-for-facebook-profile-photo-1024x645.jpg"
-                        class="profileMarginLeft">
-                    </div>
+                            <img src="https://cdn.techjuice.pk/wp-content/uploads/2015/02/wallpaper-for-facebook-profile-photo-1024x645.jpg"
+                                class="profileMarginLeft">
+                        </div>
                     </ng-template>
                     <div class="d-flex justify-content-around iconsOfEdit text-center mt-5">
                         <div (click)="gotoEditProfile()" style="cursor: pointer">
@@ -92,7 +94,9 @@
                             <p>Preferences</p>
                         </div>
                         <diV class="NotiIcon">
-                            <span [ngClass]="{'invisible': notificationCounter <= 0}" class="badge rounded-pill  bg-danger" alt="Notifications" style="color: rgb(255, 255, 255) !important;">{{notificationCounter}}</span>
+                            <span [ngClass]="{'invisible': notificationCounter <= 0}"
+                                class="badge rounded-pill  bg-danger" alt="Notifications"
+                                style="color: rgb(255, 255, 255) !important;">{{notificationCounter}}</span>
                             <div (click)="gotoNotifications()" style="cursor: pointer;">
                                 <i class="fa-solid fa-bell sizeOfIcons"></i>
                                 <p>Notifications </p>
@@ -188,24 +192,27 @@
                         <div class="col-md-8">
                             <div class="row">
                                 <div class="col mb-3 restabs">
-                                    <button type="button" (click)="onOnlineClick()" class="btnOnline">
+                                    <button type="button" (click)="onOnlineClick()"
+                                        [ngClass]="{'btnOnline': isOnlineBtnEnable, 'btnNear': !isOnlineBtnEnable}">
                                         ONLINE
                                     </button>
                                 </div>
                                 <div class="col mb-3 restabs">
-                                    <button type="button" (click)="onNearByClick()" class="btnNear">
+                                    <button type="button" (click)="onNearByClick()"
+                                        [ngClass]="{'btnOnline': isNearbyBtnEnable, 'btnNear': !isNearbyBtnEnable}">
                                         NEAR ME
                                     </button>
                                 </div>
                                 <div class="col mb-3 restabs">
-                                    <button type="button" (click)="latestByClick()" class="btnNear">
+                                    <button type="button" (click)="latestByClick()"
+                                        [ngClass]="{'btnOnline': isLatestBtnEnable, 'btnNear': !isLatestBtnEnable}">
                                         LATEST
                                     </button>
                                 </div>
                             </div>
                             <div class="row responsivelist">
                                 <ng-container *ngIf="personList.length;else noContent">
-                                    <div class="col-md-6 mt-3" *ngFor="let person of personList">
+                                    <div class="col-md-6 mt-3" *ngFor="let person of getItems()">
                                         <div class="card mb-3 styleCard" style="width: 100%; cursor: pointer;"
                                             (click)="gotoProfile(person)">
                                             <div class="row g-0 styleCard">
@@ -260,7 +267,7 @@
                                                                     class="imgCard2" alt="..." />
                                                             </div>
                                                             <div class="ms-auto">
-                                                                <button type="submit" 
+                                                                <button type="submit"
                                                                     (click)="onSendInterestClick(person); $event.stopPropagation();"
                                                                     class="insterest">
                                                                     Send Interest
@@ -278,6 +285,15 @@
                                 <!-- <ng-container *ngIf="personList.length == 0">
                                     <h5>No Users Found</h5>
                                 </ng-container> -->
+                            </div>
+                            <div *ngIf="personList.length>10" style="margin-top: 20px;">
+                                <button (click)="pageNumber = pageNumber - 1" class="btnNext"
+                                    [disabled]="pageNumber==1"><i class="fa fa-step-backward" aria-hidden="true"></i>
+                                     Prev</button>
+                                <button (click)="pageNumber = pageNumber + 1" class="btnNext"
+                                    [disabled]="pageNumber==totalPages">Next <i class="fa fa-step-forward"
+                                        aria-hidden="true"></i>
+                                </button>
                             </div>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
   <!--  NAVBAR-->
   <nav class="navbar navbar-expand-lg bgColor p-4 ">
     <div class="container">
-      <a class="navbar-brand text-white fs-4">LOGO</a>
+      <a class="navbar-brand text-white fs-4">UPDATE PROFILE</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,15 +31,16 @@
       <div class="row">
         <div class="col-md-12 pt-4 ">
           <div class="marginDev">
-            <div class="gridEight">
+            <div class="card gridEight">
               <form (ngSubmit)="update()" [formGroup]="form">
                 <h3 class="ps-5 p-4" style="color: #0f4d5c">Profile Edit</h3>
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Profile created for</label>
-                    <select class="form-select rounded-pill" aria-label="Default select example" name="ProfileCreatedFor"
-                      formControlName="profileCreated" [(ngModel)]="userProfile.profileCreated">
+                    <select class="form-select rounded-pill" aria-label="Default select example"
+                      name="ProfileCreatedFor" formControlName="profileCreated"
+                      [(ngModel)]="userProfile.profileCreated">
                       <option value="" selected>{{userProfile.profileCreated}}</option>
                       <option>Myself</option>
                       <option>Daughter</option>
@@ -60,17 +61,17 @@
                 </div>
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
-                    <label  for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                    <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Name
                     </label>
-                    <input  type="text" class="form-control rounded-pill" aria-label="Name" name="name"
+                    <input type="text" class="form-control rounded-pill" aria-label="Name" name="name"
                       formControlName="name" [(ngModel)]="userProfile.name">
                     <div class="form-check form-switch ms-2 mt-2">
-                      <input  hidden class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
-                      value='userProfile.lockDetails' name="hideName"
-                      formControlName="hideName" [(ngModel)]="userProfile.hideName" [value]="false" />
-                      
-                      <label  hidden class="form-check-label" for="flexSwitchCheckDefault">Show Name on Profile</label>
+                      <input hidden class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                        value='userProfile.lockDetails' name="hideName" formControlName="hideName"
+                        [(ngModel)]="userProfile.hideName" [value]="false" />
+
+                      <label hidden class="form-check-label" for="flexSwitchCheckDefault">Show Name on Profile</label>
                     </div>
                   </div>
                   <div class="col-md-6">
@@ -118,7 +119,7 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div *ngIf="ReligiousSelect == 'Muslim'" class="col-md-4">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -140,7 +141,7 @@
                       aria-describedby="addon-wrapping" placeholder="ex: Buddhists" name="otherreligion"
                       formControlName="otherreligion" [(ngModel)]="userProfile.otherreligion" />
                   </div>
-  
+
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Religious Status
@@ -166,7 +167,7 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -245,11 +246,11 @@
                 </div> -->
                 <div class="row mt-4 ps-4">
                   <div class="form-check form-switch ms-5 mt-2">
-                    <input  hidden class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" 
-                    value='userProfile.lockDetails' checked name="lockDetails" 
-                    formControlName="lockDetails" [(ngModel)]="userProfile.lockDetails" [value]="false"/>
-                   
-                    <label  hidden class="form-check-label" for="flexSwitchCheckDefault">Lock Contact Details</label>
+                    <input hidden class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                      value='userProfile.lockDetails' checked name="lockDetails" formControlName="lockDetails"
+                      [(ngModel)]="userProfile.lockDetails" [value]="false" />
+
+                    <label hidden class="form-check-label" for="flexSwitchCheckDefault">Lock Contact Details</label>
                   </div>
                 </div>
                 <div class="row mt-4 ps-4 pe-4">
@@ -278,7 +279,7 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -307,7 +308,7 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -363,7 +364,7 @@
                       formControlName="complexion" [(ngModel)]="userProfile.complexion">
                       <option selected>Select Complexion</option>
                       <option>Dark</option>
-  
+
                       <option>Tanned</option>
                       <option>Wheatish</option>
                       <option>Fair</option>
@@ -371,11 +372,11 @@
                   </div>
                 </div>
                 <div class="row mt-4 ps-4 pe-4">
-                 
+
                   <div class="col-md-6">
-                    <label  hidden for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
+                    <label hidden for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Height </label><br />
-                    <input  hidden type="range" id="temp" name="height" list="tickmarks" formControlName="height"
+                    <input hidden type="range" id="temp" name="height" list="tickmarks" formControlName="height"
                       [(ngModel)]="userProfile.height" />
                     <datalist id="tickmarks">
                       <option value="91.44" label="3ft"></option>
@@ -400,8 +401,8 @@
                       <!-- Any Other  -->
                       Nationality
                     </label>
-                    <select class="form-select rounded-pill" aria-label="Default select example"
-                      name="nationality"formControlName="nationality" [(ngModel)]="userProfile.nationality">
+                    <select class="form-select rounded-pill" aria-label="Default select example" name="nationality"
+                      formControlName="nationality" [(ngModel)]="userProfile.nationality">
                       <option selected>{{userProfile.nationality}}</option>
                       <option *ngFor="let country of countries" value="{{ country }}">
                         {{ country }}
@@ -442,7 +443,7 @@
                       </option>
                     </select>
                   </div>
-  
+
                   <!-- <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Job Status</label>
@@ -495,7 +496,7 @@
                       formControlName="qualification" [(ngModel)]="userProfile.qualification" />
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -572,7 +573,7 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
@@ -598,9 +599,9 @@
                     </select>
                   </div>
                 </div>
-  
+
                 <div class="row mt-4 ps-4 pe-4">
-                 
+
                   <div class="col-md-6">
                     <label for="formGroupExampleInput" class="form-label" style="color: #0f4d5c">
                       Future Plans to live in
@@ -614,7 +615,7 @@
                 <div class="row mt-4 ps-4 pe-4 ">
                   <div class="col-md-6 centerbtn">
                     <button type="submit" class="btnNext" (click)="update()">
-                      Submit
+                      Update Changes
                     </button>
                   </div>
                 </div>

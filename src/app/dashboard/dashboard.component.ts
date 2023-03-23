@@ -25,9 +25,15 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   chatList = [{ messages: [{ message: "", name: "", profile: "" }], _id: "" }];
   // chatList = { members: [],messages: [{ message: "", name: "", sender: "",senderUser:"",profile:"" }] , _id: "" };
   editAccess: Boolean = true;
-  condition:any;
+  condition: any;
+  isOnlineBtnEnable: Boolean = true;
+  isNearbyBtnEnable: Boolean = false;
+  isLatestBtnEnable: Boolean = false;
   checkbox: boolean;
   personList: Array<User> = [];
+  pageSize: number = 10;
+  pageNumber: number = 1;
+  totalPages: number;
   messagesList: Array<Message>;
   pathfemale: string = "../../assets/female.png";
   pathmessage: string = "../../assets/message.png";
@@ -48,7 +54,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   base64 = "data:image/";
   blockedUsers: any = [];
   GenderFilteer: any = []
-  notificationCounter:any;
+  notificationCounter: any;
   packageNname: any;
   userPrefrences: any;
   expiryStatus: boolean;
@@ -59,7 +65,12 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   ) {
     super()
   }
-
+  getItems(): any[] {
+    const start = (this.pageNumber - 1) * this.pageSize;
+    const end = start + this.pageSize;
+    this.totalPages = Math.ceil(this.personList.length / this.pageSize);
+    return this.personList.slice(start, end);
+  }
   ngOnInit(): void {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -79,7 +90,8 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       //     this.GetOnlineUsers(Gender.FEMALE);
       //     break
       // }
-      this.GetOnlineUsers(); 
+      this.GetOnlineUsers();
+      this.getItems();
       this.checkstatus()
       this.getAllChat();
       this.getImage();
@@ -88,8 +100,9 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       this.showPreferenceById();
       this.expiryStatus = this.checkPackageExpiry();
       console.log(this.expiryStatus);
-      
+
     }
+
     this.messagesList = [
       {
         image: "https://bit.ly/3RzZK9J",
@@ -124,14 +137,14 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
 
     ];
   }
-  checkPackageExpiry(){
+  checkPackageExpiry() {
     const currentDate = Date.now()
     const expiryDate = moment(this.CurrentUser.packageExpiry, "YYYY-MM-DD");
     const calculation = expiryDate.valueOf();
-    if(currentDate >= calculation)
-    return true ;
+    if (currentDate >= calculation)
+      return true;
     else
-    return false
+      return false
   }
   public topFunction() {
     document.body.scrollTop = 0;
@@ -139,42 +152,43 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   }
   public GetOnlineUsers() {
     this.appService.onlineUser(this.CurrentUser._id).subscribe((persons: any) => {
-        // this.personList = [];
-        if(persons.length > 0){
-          this.personList = persons.sort((a: any, b: any) => {
-            if (a.package && !b.package) return -1;
-            if (!a.package && b.package) return 1;
-            return 0;
-          });
-          let filtered = this.personList.filter((user: any) => {
-            if (!user._id?.includes(this.CurrentUser._id)) {
-              return user;
-            }
-          });
-          let filteredGender = filtered.filter((user: any) => {
-            if (!this.GenderFilteer.includes(user.gender)) {
-              return user;
-            }
-          });
-          // this.personList = filteredGender;
-          let filteredBlock = filteredGender.filter((user: any) => {
-            if (!this.blockedUsers.includes(user._id)) {
-              return user;
-            }
-          });
-          let filteredBlokOtherSecondUser = filteredBlock.filter((user: any) => {
-            if (user._id?.includes(user.Block)) {
-              return user;
-            }
-          });
-          this.personList = filteredBlokOtherSecondUser
-          this.toasterservice.success(`User Loaded successfully`);  
-          // this.personList = filteredGender
-        }else{
-          this.toasterservice.info("Match Not Found.")
-        }
+      // this.personList = [];
+      if (persons.length > 0) {
+        this.personList = persons.sort((a: any, b: any) => {
+          if (a.package && !b.package) return -1;
+          if (!a.package && b.package) return 1;
+          return 0;
+        });
+        let filtered = this.personList.filter((user: any) => {
+          if (!user._id?.includes(this.CurrentUser._id)) {
+            return user;
+          }
+        });
+        let filteredGender = filtered.filter((user: any) => {
+          if (!this.GenderFilteer.includes(user.gender)) {
+            return user;
+          }
+        });
+        // this.personList = filteredGender;
+        let filteredBlock = filteredGender.filter((user: any) => {
+          if (!this.blockedUsers.includes(user._id)) {
+            return user;
+          }
+        });
+        let filteredBlokOtherSecondUser = filteredBlock.filter((user: any) => {
+          if (user._id?.includes(user.Block)) {
+            return user;
+          }
+        });
+        this.personList = filteredBlokOtherSecondUser
+
+        this.toasterservice.success(`User Loaded successfully`);
+        // this.personList = filteredGender
+      } else {
+        this.toasterservice.info("Match Not Found.")
       }
-      );
+    }
+    );
   }
   searchValue(searchValue: any) {
     throw new Error('Method not implemented.');
@@ -203,10 +217,10 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
 
   public onNearByClick() {
     this.appService.nearBy(this.CurrentUser)
-      .subscribe((users:any) => {
+      .subscribe((users: any) => {
         console.log(users);
-        
-        if(users.length > 0){
+
+        if (users.length > 0) {
           this.personList = [];
           this.personList = users.sort((a: any, b: any) => {
             if (a.package && !b.package) return -1;
@@ -236,12 +250,16 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
           });
           this.personList = filteredGender
           this.toasterservice.success(`Users of ${this.CurrentUser.city} Loaded successfully`);
-        }else{
+        } else {
           this.toasterservice.info("Match Not Found.")
         }
-       
+
 
       });
+    this.pageNumber = 1;
+    this.isOnlineBtnEnable = false;
+    this.isNearbyBtnEnable = true;
+    this.isLatestBtnEnable = false;
   }
   // public () {
   //   this.appService.().pipe(
@@ -254,7 +272,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   // }
   public latestByClick() {
     this.appService.latest(this.CurrentUser._id).subscribe((res: any) => {
-      if(res){
+      if (res) {
         this.personList = [];
         this.personList = res.sort((a: any, b: any) => {
           if (a.package && !b.package) return -1;
@@ -266,7 +284,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
             return user;
           }
         });
-  
+
         let filteredBlock = filtered.filter((user: any) => {
           if (!this.blockedUsers.includes(user._id)) {
             return user;
@@ -277,14 +295,18 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
             return user;
           }
         });
-        this.personList = filteredBlokOtherSecondUser.sort((a:any,b:any)=> {return -1}  );
-        
- 
+        this.personList = filteredBlokOtherSecondUser.sort((a: any, b: any) => { return -1 });
+
+
         this.toasterservice.success(`Latest User Loaded successfully`);
-      }else{
+      } else {
         this.toasterservice.info("Match Not Found.")
       }
-    })
+    });
+    this.pageNumber = 1;
+    this.isOnlineBtnEnable = false;
+    this.isNearbyBtnEnable = false;
+    this.isLatestBtnEnable = true;
   }
 
   public getAllChat() {
@@ -297,12 +319,16 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
   }
   public onOnlineClick() {
     // switch (this.CurrentUser.gender) {
-      // case Gender.FEMALE:
-        // this.GetOnlineUsers();
-        // break;
-      // case Gender.MALE:
-        this.GetOnlineUsers();
-        // break
+    // case Gender.FEMALE:
+    // this.GetOnlineUsers();
+    // break;
+    // case Gender.MALE:
+    this.GetOnlineUsers();
+    this.pageNumber = 1;
+    this.isOnlineBtnEnable = true;
+    this.isNearbyBtnEnable = false;
+    this.isLatestBtnEnable = false;
+    // break
     // }
   }
 
@@ -342,7 +368,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       color1: "#4D6DC4",
       color2: "#1A2579",
       route: () => {
-        this.router.navigate(['Profile',this.CurrentUser._id]);
+        this.router.navigate(['Profile', this.CurrentUser._id]);
 
       }
     },
@@ -417,7 +443,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       .subscribe((data: any) => {
         const fullUrl = `${this.url}/${data.image}`
         this.imageUrl = data.image;
-        
+
       }
       );
   }
@@ -435,18 +461,19 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
     this.userId = localStorage.getItem('LoggedInUser');
 
     this.userId = JSON.parse(this.userId);
-    this.router.navigate(['Edit-Photos',this.userId._id]);
+    this.router.navigate(['Edit-Photos', this.userId._id]);
   }
   letschat(person: any) {
 
     let id = person._id;
-    
+
     if (this.connect >= 4) {
-      const user = this.chatList.filter((x:any)=>{
-        if(!x.members == id){
-          this.connectsdecriment(this.CurrentUser,id);
-        }}
-        );
+      const user = this.chatList.filter((x: any) => {
+        if (!x.members == id) {
+          this.connectsdecriment(this.CurrentUser, id);
+        }
+      }
+      );
       this.appService.letschat(this.CurrentUser._id, id).pipe(takeUntil(this.Unsubscribe$)).subscribe((persons) => {
         this.connect = this.connect - 4;
         this.router.navigate(['Chat/' + persons._id]);
@@ -455,22 +482,22 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       this.router.navigate(['Subscribe']);
       this.toasterservice.error("Please Purchase Connects");
     }
-    localStorage.setItem('person',JSON.stringify(person));
+    localStorage.setItem('person', JSON.stringify(person));
     localStorage.setItem("id", id);
-    
+
   }
   gotoChat(id: any) {
     this.router.navigate(['Chat/' + id]);
   }
   onSendInterestClick(person: User) {
-   if(this.expiryStatus){
-    this.toasterservice.error("Please Update Your Package");
-    return ;
-   }
+    if (this.expiryStatus) {
+      this.toasterservice.error("Please Update Your Package");
+      return;
+    }
     if (this.connect >= 4) {
       let decscition = "Sent You intrest"
-      this.notification(person,decscition);
-      this.connectsdecriment(this.CurrentUser,person._id);
+      this.notification(person, decscition);
+      this.connectsdecriment(this.CurrentUser, person._id);
       this.appService.HandleRequest(this.CurrentUser._id, person._id, RequestType.SENDING)
         .pipe(takeUntil(this.Unsubscribe$)).subscribe(response => {
 
@@ -483,30 +510,30 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
 
     }
   };
-  notification(userInfo:any,description:any){
+  notification(userInfo: any, description: any) {
     let view = true;
-    this.appService.notificationAdd(userInfo._id,this.CurrentUser,view,description).subscribe((res:any)=>{
-      
+    this.appService.notificationAdd(userInfo._id, this.CurrentUser, view, description).subscribe((res: any) => {
+
     })
   }
-  connectsdecriment(data: any,id:any) {
-    
-    
+  connectsdecriment(data: any, id: any) {
+
+
     // if(this.chatList){
-         
+
     // }else{
-      this.appService.decrimentsInConnects(this.CurrentUser._id, data).subscribe((res: any) => {
-      });
+    this.appService.decrimentsInConnects(this.CurrentUser._id, data).subscribe((res: any) => {
+    });
     // }
-    
+
   };
   SingleUser(id: any) {
     this.appService.getSingleUser(id._id).subscribe((res: any) => {
       console.log(res.package);
-      this.appService.getPackageById(res.package).subscribe((res:any)=>{
+      this.appService.getPackageById(res.package).subscribe((res: any) => {
         console.log(res);
-      this.connect = res.connect;
-      this.packageNname = res.name;
+        this.connect = res.connect;
+        this.packageNname = res.name;
       })
     })
   }
@@ -542,16 +569,16 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
     localStorage.clear();
     this.router.navigate(['loginPage']);
   }
-  showNotification(){
-    this.appService.showNotificationById(this.CurrentUser._id).subscribe((res:any)=>{
+  showNotification() {
+    this.appService.showNotificationById(this.CurrentUser._id).subscribe((res: any) => {
       this.notificationCounter = res.length;
-      if(res.length >= 1 ){
-        this.toasterservice.info("You Have" +" "+ this.notificationCounter + " "+"Notification")
+      if (res.length >= 1) {
+        this.toasterservice.info("You Have" + " " + this.notificationCounter + " " + "Notification")
       }
     });
   }
-  showPreferenceById(){
-    this.appService.showPreferenceById(this.CurrentUser._id).subscribe((res:any)=>{
+  showPreferenceById() {
+    this.appService.showPreferenceById(this.CurrentUser._id).subscribe((res: any) => {
       console.log(res);
       this.userPrefrences = res;
       // this.notificationCounter = res.length;
@@ -560,7 +587,7 @@ export class DashboardComponent extends UnsubscribeHandelr implements OnInit {
       // }
     });
   }
-  disableDashBoard(){
+  disableDashBoard() {
     // let user;
     if (this.CurrentUser && this.CurrentUser.approve == null) {
       console.log("hello");

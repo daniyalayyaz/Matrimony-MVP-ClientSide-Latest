@@ -97,8 +97,8 @@ select{
 body {
     background: transparent linear-gradient(180deg, #fc7e6b 0%, #ef5281 100%) 0%
       0% no-repeat padding-box;
-      height: 100vh;
-      font-family: Georgia, Times, "Times New Roman", serif;
+      /* height: 100vh; */
+      font-family: 'Poppins';
       overflow-x: hidden;
       
   }
@@ -108,7 +108,7 @@ body {
   .marginDev{
     /* margin: auto; */
     /* margin-left: 40px; */
-    margin-right: 40px;
+    /* margin-right: 40px; */
 
     
   }
@@ -117,10 +117,11 @@ body {
   }
 
   .gridEight {
+    border-radius: 12px;
+    margin-bottom: 20px;
     background: #faedf1 0% 0% no-repeat padding-box;
     /* padding-top: 30px; */
-    /* padding-bottom: 30px; */
-    margin: auto;
+    padding-bottom: 30px;
   }
   .signupcard{
     height: 95vh;
@@ -136,7 +137,7 @@ body {
     border-radius: 4px;
     color: white;
     padding: 10px;
-    order: none;
+    border: none;
     width: 100%;
   }
   
