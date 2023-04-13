@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AppService } from 'src/app/app.service';
 @Component({
   selector: 'app-family-details',
   templateUrl: './family-details.component.html',
@@ -14,8 +14,10 @@ export class FamilyDetailsComponent{
   OtherFamilyInfo:any;
   SisterCount:any;
   SocioeconomicStatus:any;
+  userId: any | null;
+  step7:any;
 
-  constructor(private router: Router) {
+  constructor(private router: Router , private appService: AppService) {
     if(localStorage.getItem('FamilyDetails') as string=='null') {
     this.SocioeconomicStatus =JSON.parse(localStorage.getItem('FamilyDetails') as string).SocioeconomicStatus
     this.SisterCount = JSON.parse(localStorage.getItem('FamilyDetails') as string).SisterCount
@@ -47,10 +49,43 @@ eventonKey(event: any) {
  this.FamilyDetails[event.target.name]=event.target.value;
  console.log( this.FamilyDetails);
 }
+async update() {
+  const userId = localStorage.getItem('LoginId');
+  const userids = localStorage.getItem("userId");
+  if (userId) {
+    this.userId = userId.replace(/"/g, '');
+  }
+  else if(userids){
+    this.userId = userids.replace(/"/g, '');
+  }
+      
+  console.log("2nddata:", this.FamilyDetails, this.userId);
+
+  if (this.userId) {
+    const update_user = {
+      siblingsCountSisters: this.FamilyDetails.BrotherCount,
+      fatherOccuption: this.FamilyDetails.FatherOccupation,
+      motherOccuption: this.FamilyDetails.MotherOccupation,
+      familyInfo: this.FamilyDetails.OtherFamilyInfo,
+      siblingsCountBrothers: this.FamilyDetails.SisterCount,
+      socialEconomic: this.FamilyDetails.SocioeconomicStatus,
+      step7: true,
+  };
+    this.appService.updateUser(this.userId, update_user).subscribe(res => {
+      // console.log("updated:", res);
+      this.router.navigate(['Contact-Details']);
+    }, (error: any) => {
+      console.error("updte",error);
+    });
+  } else {
+    console.error("userId is null");
+  }
+}
 gotoSignupSeventhPage(){
-  localStorage.setItem('FamilyDetails', JSON.stringify(this.FamilyDetails))
-  console.log('Hi there!')
-    this.router.navigate(['Contact-Details']);
+  this.update()
+  // localStorage.setItem('FamilyDetails', JSON.stringify(this.FamilyDetails))
+  // console.log('Hi there!')
+  //   this.router.navigate(['Contact-Details']);
 }
 gotoSignupFourthPage(){
   this.router.navigate(['Professional-Details']);

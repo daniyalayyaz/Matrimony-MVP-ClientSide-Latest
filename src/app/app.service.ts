@@ -17,6 +17,7 @@ export class AppService {
   constructor(private http: HttpClient,private auths :AngularFirestore,private angulrfire:AngularFireAuth) { }
 
   createProfile(user: User): Observable<UserResponse> {
+    // console.log("addfirst:" , user)
     const url = `${environment.apiBaseUrl}/user/createprofile`;
     return this.http.post<UserResponse>(url,user);
   }
@@ -76,12 +77,14 @@ export class AppService {
   }
 
   updateUser(id: any,data:any) {
+   
     return this.http.put(`${environment.apiBaseUrl}/user/updateProfile/${id}`,data);
   };
   updateUserProfileImage(id: any,data:any) {
     return this.http.put(`${environment.apiBaseUrl}/user/updateProfileImage/${id}`,data);
   };
   getSingleUser(id:any){
+    console.log("userid:" , id)
     return this.http.get(`${environment.apiBaseUrl}/user/getProfile/${id}`);
   }
   getProfileImage(id:any){

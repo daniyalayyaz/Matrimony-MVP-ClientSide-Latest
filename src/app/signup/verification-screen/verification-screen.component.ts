@@ -13,7 +13,7 @@ export class VerificationScreenComponent implements OnInit {
   ngOnInit(): void {
   }
   gotoPreferences(){
-    this.router.navigate(['preference']);
+    this.router.navigate(['Basic-Details']);
 
 } 
 }

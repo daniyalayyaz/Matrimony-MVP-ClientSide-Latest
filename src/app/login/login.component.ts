@@ -40,7 +40,9 @@ gotoVerification(){
   this.router.navigate(['Verification']);
 }
   async loginwithgmail(){
- var res=await (await this.appService.signwithgmail());;
+
+
+    var res = await (await this.appService.signwithgmail());
  if(res.user?.email!=null)
  {
   console.log(res.user?.email)
@@ -68,6 +70,7 @@ gotoVerification(){
     this.router.navigate(['Basic-Details']);
   }
   )}
+
   
  
  else

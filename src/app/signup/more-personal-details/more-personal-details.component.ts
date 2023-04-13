@@ -18,7 +18,9 @@ export class MorePersonalDetailsComponent  {
   hobbies:any;
   LooksSelect:any
   ComplexionSelect:any;
-  buildSelect:any
+  buildSelect:any;
+  userId: any | null;
+  step4:any;
 
   constructor(private router: Router,private appService:AppService) {
     if(localStorage.getItem('MorePersonalDetails') as string=='null') {
@@ -58,10 +60,43 @@ export class MorePersonalDetailsComponent  {
   gotoSignupSecondPage(){
     this.router.navigate(['Personal-Details']);
 }
+async update() {
+  const userId = localStorage.getItem('LoginId');
+  const userids = localStorage.getItem("userId");
+  if (userId) {
+    this.userId = userId.replace(/"/g, '');
+  }
+  else if(userids){
+    this.userId = userids.replace(/"/g, '');
+  }
+      
+  // console.log("2nddata:", this.BasicDetails, this.userId);
+
+  if (this.userId) {
+    const update_user = {
+      looks: this.MorePersonalDetails.Looks,
+      complexion: this.MorePersonalDetails.Complexion,
+      height:this.MorePersonalDetails.height,
+      inches: this.MorePersonalDetails.inches,
+      build: this.MorePersonalDetails.Build,
+      hobbies: this.MorePersonalDetails.hobbies,
+      step4: true
+  };
+    this.appService.updateUser(this.userId, update_user).subscribe(res => {
+      // console.log("updated:", res);
+      this.router.navigate(['Residential-Details']);
+    }, (error: any) => {
+      console.error("updte",error);
+    });
+  } else {
+    console.error("userId is null");
+  }
+}
 gotoSignupFourthPage(){
-  localStorage.setItem('MorePersonalDetails', JSON.stringify(this.MorePersonalDetails))
-    console.log(JSON.parse(localStorage.getItem('MorePersonalDetails') as string))
-  this.router.navigate(['Residential-Details']);
+  this.update()
+  // localStorage.setItem('MorePersonalDetails', JSON.stringify(this.MorePersonalDetails))
+  //   console.log(JSON.parse(localStorage.getItem('MorePersonalDetails') as string))
+  
 }
 getLooks(){
   this.appService.getLooks().subscribe((res:any)=>{

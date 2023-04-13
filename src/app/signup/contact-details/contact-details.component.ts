@@ -20,6 +20,8 @@ export class ContactDetailsComponent extends UnsubscribeHandelr implements OnIni
   Phone:any;
   TwitterLink:any;
 loader:any;
+userId: any | null;
+  step8:any;
   constructor(private router: Router, 
               private appService: AppService,
               private toasterservice: ToastrService
@@ -117,10 +119,47 @@ loader:any;
     //  this.router.navigateByUrl(`preference`);
 
   }
- 
+  async update() {
+    const userId = localStorage.getItem('LoginId');
+    const userids = localStorage.getItem("userId");
+    if (userId) {
+      this.userId = userId.replace(/"/g, '');
+    }
+    else if(userids){
+      this.userId = userids.replace(/"/g, '');
+    }
+        
+    console.log("2nddata:", this.ContactDetails, this.userId);
+  
+    if (this.userId) {
+      this.loader=true;
+
+      const update_user = {
+        // email: this.ContactDetails.Email,
+        socialLinkFb: this.ContactDetails.FacebookLink,
+        socialLinkInsta: this.ContactDetails.InstaLink,
+        parentContact: this.ContactDetails.ParentsPhone,
+        personalContact:this.ContactDetails.Phone,
+        socialLinkTwitter:this.ContactDetails.TwitterLink,
+
+        step8: true,
+    };
+      this.appService.updateUser(this.userId, update_user).pipe(takeUntil(this.Unsubscribe$)).subscribe(res => {
+        // console.log("updated:", res);
+        this.loader=false;
+        // this.toasterservice.success("Verification email has been sent to your provided email.");
+        // this.router.navigateByUrl(`Verification-Screen`);
+      }, (error: any) => {
+        console.error("updte",error);
+      });
+    } else {
+      console.error("userId is null");
+    }
+  }
   SubmitDetails(){
-    localStorage.setItem('ContactDetails', JSON.stringify(this.ContactDetails))
-    this.RegisterUsers()
+    this.update()
+    // localStorage.setItem('ContactDetails', JSON.stringify(this.ContactDetails))
+    // this.RegisterUsers()
 }
   gotoSignupFourthPage() {
     this.router.navigate(['Family-Details']);

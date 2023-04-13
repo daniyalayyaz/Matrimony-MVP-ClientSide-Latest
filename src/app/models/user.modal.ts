@@ -1,10 +1,30 @@
 export interface UserResponse {
     message: string
-    user: User
+    user: User,
+    id:String
+    step1:Boolean,
+    step2:Boolean,
+    step3:Boolean,
+    step4:Boolean,
+    step5:Boolean,
+    step6:Boolean,
+    step7:Boolean,
+    step8:Boolean,
+    
+    
+    
+
 }
 
 export interface User {
-    
+    step1?:Boolean,
+    step2?:Boolean,
+    step3?:Boolean,
+    step4?:Boolean,
+    step5?:Boolean,
+    step6?:Boolean,
+    step7?:Boolean,
+    step8?:Boolean,
     _id?: string;
     email?: string
     personalContact?: string

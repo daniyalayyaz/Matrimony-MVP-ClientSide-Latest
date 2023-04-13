@@ -9,7 +9,6 @@ import { AppService } from 'src/app/app.service';
 })
 export class PersonalDetailsComponent implements OnInit {
   personal:any={};
-
   ReligiousSelect: any;
   name:any;
   userage:any;
@@ -24,6 +23,8 @@ export class PersonalDetailsComponent implements OnInit {
   Sect: any = [];
   MotherTongue: any =[];
   castes: any = [];
+  userId: any | null;
+  step2:any;
 
 
   constructor(private router: Router,private appService:AppService) {
@@ -216,10 +217,45 @@ eventonKey(event: any) {
  this.personal[event.target.name]=event.target.value;
  console.log( this.personal);
 }
+async update() {
+  const userId = localStorage.getItem('LoginId');
+  const userids = localStorage.getItem("userId");
+  if (userId) {
+    this.userId = userId.replace(/"/g, '');
+  }
+  else if(userids){
+    this.userId = userids.replace(/"/g, '');
+  }
+      
+  // console.log("2nddata:", this.personal, this.userId);
+
+  if (this.userId) {
+    const update_user = {
+      caste: this.personal.Caste,
+      clan: this.personal.Clan,
+      status: this.personal.MartialStatus,
+      montherTonque:this.personal.MotherTongue,
+      religious: this.personal.Religious,
+      age: this.personal.age,
+      religiousStatus: this.personal.regligiousStatus,
+      sect: this.personal.sect,
+      step3: true,
+  };
+    this.appService.updateUser(this.userId, update_user).subscribe(res => {
+      // console.log("updated:", res);
+      this.router.navigate(['More-Personal-Details']);
+    }, (error: any) => {
+      console.error("updte",error);
+    });
+  } else {
+    console.error("userId is null");
+  }
+}
 gotoSignupThirdPage(){
-  localStorage.setItem('PersonalDetails', JSON.stringify(this.personal))
-    console.log(JSON.parse(localStorage.getItem('PersonalDetails') as string))
-    this.router.navigate(['More-Personal-Details']);
+  // localStorage.setItem('PersonalDetails', JSON.stringify(this.personal))
+  //   console.log(JSON.parse(localStorage.getItem('PersonalDetails') as string))
+  this.update()
+    // this.router.navigate(['More-Personal-Details']);
 }
 gotoSignupFirstPage(){
   this.router.navigate(['Basic-Details']);

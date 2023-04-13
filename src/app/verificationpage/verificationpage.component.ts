@@ -32,7 +32,7 @@ check=false;
       });
   })}
   gotoDashboard(){
-    this.router.navigate(['Dashboard']);
+    this.router.navigate(['Basic-Details']);
   }
 
 }
