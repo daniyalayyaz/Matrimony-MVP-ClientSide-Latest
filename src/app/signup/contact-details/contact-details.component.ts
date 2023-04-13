@@ -149,6 +149,10 @@ userId: any | null;
         this.loader=false;
         // this.toasterservice.success("Verification email has been sent to your provided email.");
         // this.router.navigateByUrl(`Verification-Screen`);
+        // if(res.resetToken=='')
+           this.router.navigateByUrl(`preference`);
+          //  else
+          //  this.toasterservice.success("Verify Email First then Go to Profile");
       }, (error: any) => {
         console.error("updte",error);
       });

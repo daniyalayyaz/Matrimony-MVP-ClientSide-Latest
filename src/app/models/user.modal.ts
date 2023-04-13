@@ -10,6 +10,7 @@ export interface UserResponse {
     step6:Boolean,
     step7:Boolean,
     step8:Boolean,
+    resetToken:String,
     
     
     
