@@ -30,10 +30,11 @@ export class LoginwithemailComponent extends UnsubscribeHandelr implements OnIni
     this.getPromotion();
   }
   gotoSignupFirstPage() {
-    this.router.navigate(['Basic-Details']);
+    this.router.navigate(['Create-Account']);
   }
 
   gotoVerification() {
+  
     console.log(this.email);
     console.log(this.password);
     
@@ -61,6 +62,27 @@ export class LoginwithemailComponent extends UnsubscribeHandelr implements OnIni
         this.router.navigateByUrl(`Dashboard`);
         this.packageshownotification()
         
+      }
+      else if(res.id){
+        this.toasterservice.warning(res.message)
+        if (res.step1) {
+          this.router.navigate(['Basic-Details']);
+        }  if (res.step2) {
+          this.router.navigate(['Personal-Details']);
+        } if (res.step3) {
+          this.router.navigate(['More-Personal-Details']);
+        }  if (res.step4) {
+          this.router.navigate(['Residential-Details']);
+        }  if (res.step5) {
+          this.router.navigate(['Professional-Details']);
+        }  if (res.step6) {
+          this.router.navigate(['Family-Details']);
+        }  if (res.step7) {
+          this.router.navigate(['Contact-Details']);
+        }
+       
+        localStorage.setItem('LoginId', JSON.stringify(res.id));
+
       }
     },err=>{
       console.log(err.error.error);

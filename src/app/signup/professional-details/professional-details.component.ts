@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AppService } from 'src/app/app.service';
 @Component({
   selector: 'app-professional-details',
   templateUrl: './professional-details.component.html',
@@ -17,7 +17,9 @@ export class ProfessionalDetailsComponent implements OnInit {
   Qualification:any;
   Workplace:any;
   AlliedJobStatus:any;
-  constructor(private router: Router) {
+  userId: any | null;
+  step6:any;
+  constructor(private router: Router , private appService: AppService,) {
     if(localStorage.getItem('ProfessionalDetails') as string=='null') {
     this.ProfessionSelect = JSON.parse(localStorage.getItem('ProfessionalDetails') as string).Profession
     this.StatusSelect = JSON.parse(localStorage.getItem('ProfessionalDetails') as string).JobStatus
@@ -58,10 +60,47 @@ eventonKey(event: any) {
  this.ProfessionalDetails[event.target.name]=event.target.value;
  console.log( this.ProfessionalDetails);
 }  
+
+async update() {
+  const userId = localStorage.getItem('LoginId');
+  const userids = localStorage.getItem("userId");
+  if (userId) {
+    this.userId = userId.replace(/"/g, '');
+  }
+  else if(userids){
+    this.userId = userids.replace(/"/g, '');
+  }
+      
+  console.log("2nddata:", this.ProfessionalDetails, this.userId);
+
+  if (this.userId) {
+    const update_user = {
+      professional: this.ProfessionalDetails.ProfessionSelect,
+      jobStatus:this.ProfessionSelect.StatusSelect,
+      professionalInfo:this.ProfessionSelect.AnyotherInfo,
+      anotherqualification:this.ProfessionSelect.OtherInfo,
+      workplace: this.ProfessionalDetails.Workplace,
+      income: this.ProfessionalDetails.Income,
+      institution: this.ProfessionalDetails.Institution,
+      qualification: this.ProfessionalDetails.OtherInfo,
+       specialties:this.ProfessionSelect.Qualification,
+      step6: true,
+  };
+    this.appService.updateUser(this.userId, update_user).subscribe(res => {
+      // console.log("updated:", res);
+      this.router.navigate(['Family-Details']);
+    }, (error: any) => {
+      console.error("updte",error);
+    });
+  } else {
+    console.error("userId is null");
+  }
+}
 gotoSignupSeventhPage(){
-  localStorage.setItem('ProfessionalDetails', JSON.stringify(this.ProfessionalDetails))
-    console.log(JSON.parse(localStorage.getItem('ProfessionalDetails') as string))
-    this.router.navigate(['Family-Details']);
+  this.update()
+  // localStorage.setItem('ProfessionalDetails', JSON.stringify(this.ProfessionalDetails))
+  //   console.log(JSON.parse(localStorage.getItem('ProfessionalDetails') as string))
+  //   this.router.navigate(['Family-Details']);
 }
 gotoSignupFourthPage(){
   this.router.navigate(['Residential-Details']);

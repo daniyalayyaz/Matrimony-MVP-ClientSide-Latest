@@ -70,7 +70,7 @@ export class LandingpageComponent implements OnInit {
     this.router.navigate(['Login']);
   }
   RedirectToSignup(){
-    this.router.navigate(['Basic-Details']);
+    this.router.navigate(['Create-Account']);
   }
   
 }

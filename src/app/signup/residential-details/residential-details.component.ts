@@ -17,6 +17,8 @@ export class ResidentialDetailsComponent implements OnInit {
   City: any;
   AnyOtherNationality: any;
   countries: any = [];
+  userId: any | null;
+  step5:any;
 
   constructor(private router: Router, private appService: AppService) {
     if (localStorage.getItem('ResidentialDetails') as string == 'null') {
@@ -73,10 +75,43 @@ export class ResidentialDetailsComponent implements OnInit {
   gotoSignupThirdPage() {
     this.router.navigate(['More-Personal-Details']);
   }
+  async update() {
+    const userId = localStorage.getItem('LoginId');
+    const userids = localStorage.getItem("userId");
+    if (userId) {
+      this.userId = userId.replace(/"/g, '');
+    }
+    else if(userids){
+      this.userId = userids.replace(/"/g, '');
+    }
+        
+    console.log("2nddata:", this.ResidentialDetails, this.userId);
+  
+    if (this.userId) {
+      const update_user = {
+        province: this.ResidentialDetails.Province,
+        house: this.ResidentialDetails.HouseStatus,
+        futurePlans: this.ResidentialDetails.FuturePlanstoLiveIn,
+        city: this.ResidentialDetails.City,
+        nationality: this.ResidentialDetails.AnyOtherNationality,
+        country:this.ResidentialDetails.country,
+        step5: true,
+    };
+      this.appService.updateUser(this.userId, update_user).subscribe(res => {
+        // console.log("updated:", res);
+        this.router.navigate(['Professional-Details']);
+      }, (error: any) => {
+        console.error("updte",error);
+      });
+    } else {
+      console.error("userId is null");
+    }
+  }
   gotoSignupSixthPage() {
-    localStorage.setItem('ResidentialDetails', JSON.stringify(this.ResidentialDetails))
-    console.log(JSON.parse(localStorage.getItem('ResidentialDetails') as string))
-    this.router.navigate(['Professional-Details']);
+    this.update()
+    // localStorage.setItem('ResidentialDetails', JSON.stringify(this.ResidentialDetails))
+    // console.log(JSON.parse(localStorage.getItem('ResidentialDetails') as string))
+    //
   }
 
 
