@@ -35,7 +35,7 @@
     padding: 8px;
 }
 .profileBgColor{
-    font-family: 'Gill Sans';
+    font-family: 'Montserrat', sans-serif;
 }
 .card-overlay{
     position: absolute;
@@ -47,6 +47,14 @@
     bottom: 20px;
     width: 100%;
 }
+.shadowbox{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.textshadow{
+    text-shadow: 0 1px 0 #999, 0 2px 0 #888, 0 3px 0 #777, 0 4px 0 #666, 0 5px 0 #555, 0 6px 0 #444, 0 7px 0 #333, 0 8px 0 #222, 0 9px 10px rgba(0, 0, 0, 0.4);
+    /* transform: skew(-10deg); */
+}
+  
 .btnRqt {
     background: #0F4D5C 0% 0% no-repeat padding-box;
     border-radius: 4px;
@@ -62,7 +70,8 @@
     background: transparent linear-gradient(180deg, #FC7E6B 0%, #EF5281 100%) 0% 0% no-repeat padding-box;
     border-radius: 5px;
     color: white;
-    height: 150px;
+    padding: 10px;
+    /* height: 150px; */
 }
 
 .profileBgColor {
@@ -80,20 +89,24 @@
     color: #ED7E9E;
 }
 .ProfileHeadings{
-    color: #ED7E9E;
-    font-size: 1em
+    color: gray;
+    font-size: 0.8em;
+    font-weight: 700
 }
 .ProfileDetails{
-    font-size: 1em
+    font-size: 0.8em;
+    font-weight: 600
 }
 .infoOfPoint {
     list-style: none;
     color: #0F4D5C;
 }
+
 .OnWebAvatar{
     border-radius: 10px;
+    border: 5px solid white;
     width: 80%;
-    height: 150px;
+    height: 200px;
     margin-bottom: 20px;
 }
 
@@ -115,7 +128,7 @@
         margin-left: 0 !important;
     }
     .respadding{
-        padding: 10px;
+        padding: 20px;
     }
     .rescard{
         width: 50%;

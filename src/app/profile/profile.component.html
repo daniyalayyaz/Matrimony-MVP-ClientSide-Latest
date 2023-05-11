@@ -38,13 +38,14 @@
                     <!-- <p *ngIf="profilepic"> <img [src]="imageUrl" class="OnMobileAvatar" /></p>
                     <p *ngIf="!profilepic"><img [src]="imageUrl"class="OnMobileAvatar" /></p> -->
                     <div class="" *ngIf="imageUrl;else img" style="position: relative;">
-                        <img [src]='imageUrl' class="OnWebAvatar OnMobileAvatar" />
-                        <div style="position: absolute; bottom: -4%; left: 30%;" class="Iconres">
+                        <img [src]='imageUrl' class="OnWebAvatar OnMobileAvatar shadowbox" />
+                        <!-- <div style="position: absolute; bottom: -4%; left: 30%;" class="Iconres">
+                            <i class="fa-regular fa-heart" style="color: #ed450c; font-size: 60px;" (click)="OnFavClick()"></i>
                             <img src={{pathmessage}} (click)="gotoChat()" alt="Girl in a jacket" width="60"
                                 height="60" />
                             <img src={{pathheart}} (click)="OnFavClick()" alt="Girl in a jacket" width="60"
                                 height="50" />
-                        </div>
+                        </div> -->
                         <!-- <img src={{pathright}} alt="Girl in a jacket" width="50" height="60" /> -->
                     </div>
                     <ng-template #img>
@@ -70,14 +71,20 @@
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQPp2A-sJfaIat177Mus3XzVsNqsNiu7ysw&usqp=CAU">
                 </ng-template> -->
                 <div class="BtnRes">
-                    <button type="button" class="btnRqt mb-3 mt-3" (click)="gotoSubscribe()">
-                        INTEREST REQUEST
+                    <button type="button" class="btnRqt mb-3 mt-3 shadowbox" (click)="gotoSubscribe()">
+                        <i class="fa-sharp fa-solid fa-comments" style="color: #ffffff; margin-right:5px;"></i> Send Message
                     </button>
-                    <button type="button" class="btnRqt mb-3" (click)="blockuser(profileDetails._id)">
-                        BLOCK
+                    <button type="button" class="btnRqt mb-3 shadowbox" (click)="gotoChat()">
+                        <i class="fa-solid fa-thumbs-up" style="color: #ffffff; margin-right:5px;"></i>Send Interest
                     </button>
-                    <button type="button" class="btnRqt" (click)="openModal()">
-                        REPORT PROFILE
+                    <button type="button" class="btnRqt mb-3 shadowbox" (click)="OnFavClick()">
+                        <i class="fa-solid fa-heart" style="color: #ffffff; margin-right:5px;"></i>Add to Favorites
+                    </button>
+                    <button type="button" class="btnRqt mb-3 shadowbox" (click)="blockuser(profileDetails._id)">
+                        <i class="fa-solid fa-ban" style="color: #ffffff; margin-right:5px;"></i>Block Profile
+                    </button>
+                    <button type="button" class="btnRqt shadowbox" (click)="openModal()">
+                        <i class="fa-solid fa-triangle-exclamation" style="color: #ffffff; margin-right:5px;"></i>Report Profile
                     </button>
                 </div>
             </div>
@@ -102,16 +109,16 @@
                 </div>
             </div>
             <div class="col-md-9 padding-zero">
-                <div class="bgRow pt-4">
+                <div class="bgRow shadowbox">
                     <div class="row ms-3 me-3">
-                        <div class="col-8">
-                            <h1 class="text-start resfont">{{profileDetails.name}}</h1>
+                        <div class="col-12">
+                            <h1 class="text-start resfont textshadow" style="font-weight: 600;">{{profileDetails.name}}</h1>
                         </div>
-                        <div class="col-4">
-                            <p class="text-end">{{profileDetails.country}}</p>
-                        </div>
+                        <!-- <div class="col-4">
+                            <h5 class="text-end">{{profileDetails.country}}</h5>
+                        </div> -->
                     </div>
-                    <div class="row ms-3 me-3">
+                    <!-- <div class="row ms-3 me-3">
                         <div class="col-6">
                             <h3 class="text-start">{{profileDetails.professional}}</h3>
                         </div>
@@ -119,7 +126,7 @@
 
                             <img class="text-end" src="https://bit.ly/3BbFu7p" alt="pakistan" width="80" height="40" />
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -128,10 +135,10 @@
                     <hr class="underLine" />
                     <p>{{info.information}}</p>
                 </div> -->
-                <div class="card mt-3 mb-3">
-                    <div class="row mt-3 ms-3 me-3 text-start">
+                <div class="card mt-3 mb-3 shadowbox">
+                    <div class="row mt-3 ms-3 me-3 text-start card-inner">
                         <div class="col-md-12">
-                            <p style="color: #ED7E9E; font-size: 1.5em" class="ps-4 mt-4">Public Information</p>
+                            <p style="color: #ED7E9E; font-size: 1.5em; font-weight: 600;" class="ps-4 mt-4">Public Information</p>
                             <hr class="underLine" />
                             <div class="row pb-3">
                                 <div class="col-md-6">
@@ -324,7 +331,7 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-6 ps-5">
-                                            <h4 class="ProfileHeadings">Monthly Income (PKR)</h4>
+                                            <h4 class="ProfileHeadings">Monthly Income</h4>
                                         </div>
                                         <div class="col-6">
                                             <h4 class="ProfileDetails">{{profileDetails.income}}</h4>
@@ -381,7 +388,7 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-6 ps-5">
-                                            <h4 class="ProfileHeadings">Siblings Count (Brothers)</h4>
+                                            <h4 class="ProfileHeadings">Brothers Count</h4>
                                         </div>
                                         <div class="col-6">
                                             <h4 class="ProfileDetails">{{profileDetails.siblingsCountBrothers}}</h4>
@@ -389,7 +396,7 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-6 ps-5">
-                                            <h4 class="ProfileHeadings">Siblings Count (Sisters)</h4>
+                                            <h4 class="ProfileHeadings">Sisters Count</h4>
                                         </div>
                                         <div class="col-6">
                                             <h4 class="ProfileDetails">{{profileDetails.siblingsCountSisters}}</h4>
@@ -411,10 +418,10 @@
 
                     </div>
                 </div>
-                <div class="card mb-3">
+                <div class="card mb-3 shadowbox">
                     <div class="row mt-3 ms-3 me-3 mb-5 text-start">
                         <div class="col-md-12 pb-3">
-                            <p style="color: #ED7E9E; font-size: 1.5em;" class="ps-4 mt-4">Private Information</p>
+                            <p style="color: #ED7E9E; font-size: 1.5em; font-weight: 600;" class="ps-4 mt-4">Private Information</p>
                             <hr class="underLine" />
                             <div>
                                 <h2 class="mt-5 mb-5 text-center" style="font-size: 1em; font-weight: bold;"><span><i
