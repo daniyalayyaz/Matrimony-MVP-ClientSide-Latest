@@ -98,7 +98,7 @@ body {
     background: transparent linear-gradient(180deg, #fc7e6b 0%, #ef5281 100%) 0%
       0% no-repeat padding-box;
       /* height: 100vh; */
-      font-family: 'Poppins';
+      font-family: 'Montserrat', sans-serif;
       overflow-x: hidden;
       
   }

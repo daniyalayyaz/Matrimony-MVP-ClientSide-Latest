@@ -1,9 +1,9 @@
-<div style="font-family: 'Poppins';">
+<div style="font-family: 'Montserrat', sans-serif;">
     <!--  NAVBAR-->
     <nav class="navbar navbar-expand-lg bgColor p-4">
         <div class="container">
-            <a class="navbar-brand text-white fs-4">LOGO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <a class="navbar-brand text-white fs-4">MY PHOTOS</a>
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -22,7 +22,7 @@
                         </button>
                     </li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <!-- SIDE NAVBAR -->
@@ -39,12 +39,11 @@
     </ng-template> -->
     <div class="about">
         <div class="main-card">
-            <h1>Edit my Photos</h1>
+            <h3>Change Images</h3>
             <hr />
             <div>
-                <div class="col d-flex" *ngIf="imageUrl;else imgUrl">
-                    <img src="{{environment.url}}/{{imageUrl}}" alt="You have No Profile" height="100px"
-                        width="100px">
+                <div class="profile-pic-preview" *ngIf="imageUrl;else imgUrl">
+                    <img src="{{environment.url}}/{{imageUrl}}" alt="You have No Profile" id="preview-image">
                         <div>
                             <button class="cross-btn" (click)="deleteProfile()"><i class="fa fa-times"></i></button>
                         </div>
@@ -61,7 +60,7 @@
             <hr>
             <br />
             <div class="row">
-                <h2 class="col-md-4">Gallary Photos</h2>
+                <h2 class="col-md-4">Gallery Photos</h2>
                 <!-- <div class="col"  >
                     <img *ngFor='let url of gallary' [src]='url' alt="You have No Profile" height="100px" width="100px">
                     <img *ngFor='let url of multipleImages' [src]='url' alt="You have No Profile" height="100px" width="100px">
